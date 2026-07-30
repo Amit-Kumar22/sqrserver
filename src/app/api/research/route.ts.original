@@ -1,0 +1,96 @@
+import { NextRequest, NextResponse } from 'next/server';
+import dbConnect from '@/lib/mongodb';
+import ResearchContent from '@/models/ResearchContent';
+
+// GET /api/research - Get all research content (public - published only)
+export async function GET(request: NextRequest) {
+  try {
+    await dbConnect();
+    
+    const { searchParams } = new URL(request.url);
+    const limit = parseInt(searchParams.get('limit') || '10');
+    const page = parseInt(searchParams.get('page') || '1');
+    const category = searchParams.get('category');
+    const all = searchParams.get('all'); // For admin to get all content
+    
+    const query: any = all !== 'true' ? { published: true } : {};
+    if (category) query.category = category;
+    
+    const skip = (page - 1) * limit;
+    
+    const research = await ResearchContent.find(query)
+      .sort({ publishedDate: -1, createdAt: -1 })
+      .skip(skip)
+      .limit(limit)
+      .lean();
+    
+    const total = await ResearchContent.countDocuments(query);
+    
+    return NextResponse.json(
+      {
+        research,
+        pagination: {
+          total,
+          page,
+          limit,
+          totalPages: Math.ceil(total / limit),
+        },
+      },
+      { status: 200 }
+    );
+  } catch (error) {
+    console.error('Get research error:', error);
+    return NextResponse.json(
+      { error: 'Internal server error' },
+      { status: 500 }
+    );
+  }
+}
+
+// POST /api/research - Create new research content (admin only)
+export async function POST(request: NextRequest) {
+  try {
+    await dbConnect();
+    
+    const researchData = await request.json();
+    
+    // Validate required fields
+    const requiredFields = ['title', 'content', 'summary', 'category', 'author'];
+    for (const field of requiredFields) {
+      if (!researchData[field]) {
+        return NextResponse.json(
+          { error: `${field} is required` },
+          { status: 400 }
+        );
+      }
+    }
+    
+    // If publishing, set publishedDate
+    if (researchData.published) {
+      researchData.publishedDate = new Date();
+    }
+    
+    const research = new ResearchContent(researchData);
+    await research.save();
+    
+    return NextResponse.json(
+      { message: 'Research content created successfully', research },
+      { status: 201 }
+    );
+  } catch (error: any) {
+    console.error('Create research error:', error);
+    
+    if (error.name === 'ValidationError') {
+      const errors = Object.values(error.errors).map((err: any) => err.message);
+      return NextResponse.json(
+        { error: 'Validation error', details: errors },
+        { status: 400 }
+      );
+    }
+    
+    return NextResponse.json(
+      { error: 'Internal server error' },
+      { status: 500 }
+    );
+  }
+}

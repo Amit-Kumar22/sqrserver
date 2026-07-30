@@ -1,0 +1,515 @@
+import { NextRequest, NextResponse } from 'next/server';
+
+// Mock research content data (same as in main route)
+const mockResearch = [
+  {
+    _id: '65b1c2d3e4f5678901234567',
+    title: 'Quantum Computing Applications in Business',
+    content: `Quantum computing represents a paradigm shift in computational capabilities, offering unprecedented potential for solving complex business problems that are intractable for classical computers.
+
+## Current State of Quantum Computing
+
+Quantum computing has evolved from theoretical concept to practical reality, with major technology companies and startups developing quantum hardware and software solutions. The field is characterized by:
+
+- **Quantum Supremacy**: Demonstrated ability to solve specific problems faster than classical computers
+- **Hardware Developments**: Advances in qubit stability, error correction, and scaling
+- **Software Ecosystem**: Growing libraries and frameworks for quantum algorithm development
+- **Cloud Access**: Quantum computing as a service through cloud platforms
+
+## Business Applications
+
+### Financial Services
+- **Portfolio Optimization**: Quantum algorithms can process vast numbers of variables simultaneously
+- **Risk Analysis**: Enhanced modeling of complex financial derivatives
+- **Fraud Detection**: Pattern recognition in large datasets with quantum machine learning
+
+### Supply Chain Management  
+- **Optimization Problems**: Route optimization, inventory management, and logistics
+- **Real-time Adjustments**: Dynamic response to supply chain disruptions
+- **Predictive Analytics**: Better forecasting through quantum enhanced algorithms
+
+### Drug Discovery
+- **Molecular Simulation**: Quantum computers can model molecular interactions naturally
+- **Drug-Target Interaction**: Precise modeling of protein folding and drug binding
+- **Accelerated Research**: Reduced time from discovery to clinical trials
+
+### Artificial Intelligence
+- **Quantum Machine Learning**: Algorithms that leverage quantum parallelism
+- **Natural Language Processing**: Enhanced understanding through quantum neural networks
+- **Computer Vision**: Improved pattern recognition and image processing
+
+## Implementation Challenges
+
+### Technical Barriers
+- **Quantum Error Rates**: Current systems are noisy and require error correction
+- **Limited Coherence Time**: Quantum states are fragile and short-lived
+- **Scalability**: Building systems with sufficient qubits for practical problems
+
+### Business Considerations
+- **Cost**: Quantum systems require significant investment in infrastructure
+- **Expertise**: Shortage of quantum computing specialists
+- **Integration**: Connecting quantum systems with existing business processes
+- **ROI Uncertainty**: Long-term returns on quantum investments are unclear
+
+## Future Outlook
+
+The quantum computing industry is projected to grow exponentially, with practical applications emerging in the next 5-10 years. Key trends include:
+
+- **Hybrid Computing**: Combining quantum and classical systems for optimal performance
+- **Industry Partnerships**: Collaborations between quantum companies and traditional businesses
+- **Educational Initiatives**: Growing academic programs and professional training
+- **Regulatory Framework**: Development of standards and regulations for quantum technology
+
+## Strategic Recommendations
+
+For businesses considering quantum computing adoption:
+
+1. **Start with Education**: Build internal understanding of quantum principles and applications
+2. **Identify Use Cases**: Map specific business problems to quantum advantages
+3. **Partner with Experts**: Collaborate with quantum computing companies and research institutions
+4. **Pilot Projects**: Begin with small-scale experiments to gain experience
+5. **Long-term Investment**: Develop a multi-year quantum strategy and budget
+
+## Conclusion
+
+Quantum computing will fundamentally transform how businesses approach complex computational problems. While still in early stages, organizations that begin preparing now will be positioned to capitalize on quantum advantages as the technology matures.`,
+    category: 'quantum-computing',
+    tags: ['quantum', 'business', 'technology', 'future'],
+    status: 'published',
+    featured: true,
+    publishDate: '2023-11-15',
+    readTime: 8,
+    createdAt: '2023-11-15T00:00:00.000Z',
+    updatedAt: '2023-11-15T00:00:00.000Z',
+  },
+  {
+    _id: '65b1c2d3e4f5678901234568',
+    title: 'Artificial Intelligence in Healthcare',
+    content: `The integration of artificial intelligence in healthcare is revolutionizing patient care, diagnostic accuracy, and treatment outcomes. This comprehensive analysis explores current applications and future potential.
+
+## AI in Medical Diagnostics
+
+### Medical Imaging
+AI algorithms have shown remarkable success in medical image analysis:
+- **Radiology**: Deep learning models can detect tumors, fractures, and abnormalities with high accuracy
+- **Pathology**: Automated analysis of tissue samples for cancer detection
+- **Ophthalmology**: Early detection of diabetic retinopathy and glaucoma
+- **Cardiology**: Analysis of ECGs and cardiac imaging for heart disease
+
+### Diagnostic Assistance
+- **Symptom Analysis**: AI systems can process patient symptoms and suggest potential diagnoses
+- **Risk Assessment**: Predictive models identify patients at risk for specific conditions
+- **Drug Interactions**: AI checks for potential adverse drug interactions
+- **Clinical Decision Support**: Real-time assistance for healthcare providers
+
+## Treatment and Personalized Medicine
+
+### Precision Medicine
+AI enables personalized treatment approaches:
+- **Genomic Analysis**: Processing genetic data to predict treatment responses
+- **Biomarker Identification**: Discovery of molecular markers for targeted therapy
+- **Treatment Optimization**: Customizing drug dosages based on patient characteristics
+- **Clinical Trial Matching**: AI matches patients with appropriate clinical trials
+
+### Robotic Surgery
+- **Precision Enhancement**: Improved surgical accuracy through robotic assistance
+- **Minimally Invasive Procedures**: Reduced patient trauma and recovery time
+- **Surgical Planning**: AI-assisted pre-operative planning and simulation
+- **Real-time Guidance**: Intraoperative assistance and decision support
+
+## Healthcare Operations
+
+### Administrative Efficiency
+- **Electronic Health Records**: Natural language processing for documentation
+- **Appointment Scheduling**: Intelligent scheduling systems
+- **Billing and Coding**: Automated medical coding and billing processes
+- **Resource Management**: Optimization of staff and equipment allocation
+
+### Population Health Management
+- **Epidemiological Analysis**: Tracking disease patterns and outbreaks
+- **Public Health Monitoring**: Real-time health surveillance
+- **Healthcare Analytics**: Population-level health trend analysis
+- **Preventive Care**: Identifying individuals at risk for preventive interventions
+
+## Challenges and Considerations
+
+### Technical Challenges
+- **Data Quality**: Ensuring accurate and complete medical data
+- **Interoperability**: Integration with existing healthcare systems
+- **Validation**: Rigorous testing and validation of AI algorithms
+- **Scalability**: Deploying AI solutions across diverse healthcare settings
+
+### Ethical and Regulatory Issues
+- **Patient Privacy**: Protecting sensitive medical information
+- **Algorithmic Bias**: Ensuring fair treatment across all patient populations
+- **Liability**: Determining responsibility when AI systems make errors
+- **Regulatory Approval**: FDA and other regulatory approval processes
+
+## Future Directions
+
+### Emerging Technologies
+- **Quantum Computing**: Enhanced processing power for complex medical simulations
+- **Edge Computing**: Real-time AI processing at the point of care
+- **Federated Learning**: Collaborative AI training while preserving privacy
+- **Explainable AI**: Making AI decisions interpretable to healthcare providers
+
+### Integration Trends
+- **Wearable Technology**: Continuous health monitoring and AI analysis
+- **Telemedicine**: AI-enhanced remote patient care
+- **Mental Health**: AI applications in psychological assessment and therapy
+- **Global Health**: AI solutions for healthcare in resource-limited settings
+
+## Conclusion
+
+AI in healthcare represents one of the most promising applications of artificial intelligence, with the potential to improve patient outcomes, reduce costs, and enhance the efficiency of healthcare delivery. Success will depend on addressing technical challenges, ethical considerations, and regulatory requirements while maintaining focus on patient safety and care quality.`,
+    category: 'artificial-intelligence',
+    tags: ['AI', 'healthcare', 'medicine', 'diagnostics'],
+    status: 'published',
+    featured: true,
+    publishDate: '2023-10-20',
+    readTime: 12,
+    createdAt: '2023-10-20T00:00:00.000Z',
+    updatedAt: '2023-10-20T00:00:00.000Z',
+  },
+  {
+    _id: '65b1c2d3e4f5678901234569',
+    title: 'Blockchain Technology Beyond Cryptocurrency',
+    content: `While blockchain technology is most commonly associated with cryptocurrencies, its potential applications extend far beyond digital currencies into numerous industries and use cases.
+
+## Understanding Blockchain Fundamentals
+
+Blockchain is a distributed ledger technology that maintains a continuously growing list of records, called blocks, which are linked and secured using cryptography. Key characteristics include:
+
+- **Decentralization**: No single point of control or failure
+- **Immutability**: Records cannot be altered once confirmed
+- **Transparency**: All transactions are visible to network participants
+- **Consensus**: Agreement mechanisms ensure network integrity
+
+## Supply Chain Management
+
+### Traceability and Transparency
+- **Product Authentication**: Verify authenticity and prevent counterfeiting
+- **Origin Tracking**: Complete visibility of product journey from source to consumer
+- **Quality Assurance**: Immutable records of quality checks and certifications
+- **Recall Management**: Rapid identification and isolation of defective products
+
+### Case Studies
+- **Food Safety**: Walmart uses blockchain to trace food products and identify contamination sources
+- **Luxury Goods**: LVMH tracks luxury items to prevent counterfeiting
+- **Pharmaceuticals**: Drug traceability from manufacturer to patient
+
+## Digital Identity and Authentication
+
+### Identity Management
+- **Self-Sovereign Identity**: Individuals control their own identity data
+- **Credential Verification**: Tamper-proof academic and professional credentials
+- **Access Control**: Secure authentication for systems and services
+- **Privacy Protection**: Selective disclosure of identity information
+
+### Applications
+- **Academic Credentials**: Universities issue blockchain-verified diplomas
+- **Professional Licenses**: Immutable records of professional qualifications
+- **Government IDs**: Secure digital identity documents
+- **Healthcare Records**: Patient-controlled medical history
+
+## Smart Contracts and Automation
+
+### Automated Execution
+- **Contract Automation**: Self-executing contracts with predefined conditions
+- **Payment Systems**: Automatic payments based on contract fulfillment
+- **Compliance**: Built-in regulatory compliance checks
+- **Dispute Resolution**: Predetermined resolution mechanisms
+
+### Use Cases
+- **Insurance**: Automated claim processing and payouts
+- **Real Estate**: Streamlined property transfers and escrow
+- **Supply Chain**: Automatic payments upon delivery confirmation
+- **Intellectual Property**: Automated royalty distribution
+
+## Healthcare Applications
+
+### Medical Records
+- **Patient Data**: Secure, interoperable health records
+- **Drug Traceability**: Pharmaceutical supply chain integrity
+- **Clinical Trials**: Transparent and tamper-proof research data
+- **Insurance Claims**: Streamlined and fraud-resistant processing
+
+### Research and Development
+- **Data Sharing**: Secure collaboration between research institutions
+- **Regulatory Compliance**: Audit trails for clinical research
+- **Patient Consent**: Transparent consent management for data use
+
+## Voting and Governance
+
+### Democratic Processes
+- **Transparent Voting**: Immutable voting records and results
+- **Voter Privacy**: Anonymous yet verifiable voting
+- **Remote Voting**: Secure digital voting systems
+- **Audit Trails**: Complete record of electoral processes
+
+### Organizational Governance
+- **Corporate Voting**: Shareholder voting and proxy systems
+- **Community Governance**: Decentralized organizational decision-making
+- **Proposal Systems**: Transparent proposal and voting mechanisms
+
+## Challenges and Limitations
+
+### Technical Challenges
+- **Scalability**: Limited transaction throughput compared to traditional systems
+- **Energy Consumption**: High energy requirements for some consensus mechanisms
+- **Interoperability**: Connecting different blockchain networks
+- **User Experience**: Complex interfaces and technical requirements
+
+### Regulatory and Adoption Barriers
+- **Legal Framework**: Unclear regulatory status in many jurisdictions
+- **Standards**: Lack of industry standards and protocols
+- **Integration**: Challenges integrating with existing systems
+- **Education**: Limited understanding of blockchain technology
+
+## Future Outlook
+
+### Technology Evolution
+- **Layer 2 Solutions**: Scaling solutions built on top of existing blockchains
+- **Quantum Resistance**: Preparing for quantum computing threats
+- **Green Blockchain**: More energy-efficient consensus mechanisms
+- **Cross-chain Integration**: Seamless interaction between different blockchains
+
+### Industry Adoption
+- **Enterprise Solutions**: Increasing adoption by large organizations
+- **Government Implementation**: Public sector blockchain initiatives
+- **Industry Consortiums**: Collaborative blockchain development
+- **Standardization**: Development of industry standards and best practices
+
+## Conclusion
+
+Blockchain technology offers transformative potential across numerous industries beyond cryptocurrency. While challenges remain, continued development and adoption are driving innovative solutions that leverage blockchain's unique properties of decentralization, immutability, and transparency. Organizations should evaluate blockchain applications relevant to their specific use cases and begin pilot programs to gain experience with this revolutionary technology.`,
+    category: 'blockchain',
+    tags: ['blockchain', 'supply-chain', 'identity', 'smart-contracts'],
+    status: 'published',
+    featured: false,
+    publishDate: '2023-09-25',
+    readTime: 10,
+    createdAt: '2023-09-25T00:00:00.000Z',
+    updatedAt: '2023-09-25T00:00:00.000Z',
+  },
+  {
+    _id: '65b1c2d3e4f567890123456a',
+    title: 'Cybersecurity in the Age of Remote Work',
+    content: `The shift to remote work has fundamentally changed the cybersecurity landscape, introducing new vulnerabilities and challenges that organizations must address to protect their digital assets.
+
+## The New Security Perimeter
+
+Traditional security models were built around a defined network perimeter. Remote work has dissolved these boundaries, creating new challenges:
+
+### Expanded Attack Surface
+- **Home Networks**: Often less secure than corporate networks
+- **Personal Devices**: BYOD policies increase security complexity
+- **Public Wi-Fi**: Unsecured connections pose data interception risks
+- **Cloud Services**: Increased reliance on third-party platforms
+
+### Identity and Access Management
+- **Zero Trust Architecture**: Verify every user and device regardless of location
+- **Multi-Factor Authentication**: Essential for remote access security
+- **Privileged Access Management**: Controlling administrative access remotely
+- **Identity Governance**: Automated user provisioning and deprovisioning
+
+## Common Remote Work Security Threats
+
+### Social Engineering Attacks
+- **Phishing**: Email-based attacks targeting remote workers
+- **Vishing**: Voice-based social engineering
+- **Smishing**: SMS-based phishing attempts
+- **Pretexting**: Creating false scenarios to extract information
+
+### Technical Vulnerabilities
+- **Unsecured Endpoints**: Personal devices lacking corporate security controls
+- **VPN Vulnerabilities**: Increased load and potential security gaps
+- **Shadow IT**: Unauthorized software and services
+- **Data Leakage**: Uncontrolled data access and sharing
+
+## Security Framework for Remote Work
+
+### Endpoint Security
+- **Endpoint Detection and Response (EDR)**: Real-time monitoring and response
+- **Device Management**: Mobile device management (MDM) and unified endpoint management (UEM)
+- **Encryption**: Full disk encryption and data-in-transit protection
+- **Patch Management**: Automated security updates and vulnerability remediation
+
+### Network Security
+- **Secure Remote Access**: VPN, ZTNA, and secure access service edge (SASE)
+- **Network Segmentation**: Limiting access to critical resources
+- **DNS Protection**: Filtering malicious domains and websites
+- **Bandwidth Management**: Quality of service for business-critical applications
+
+### Data Protection
+- **Data Loss Prevention (DLP)**: Preventing unauthorized data exfiltration
+- **Cloud Security**: Securing cloud storage and collaboration platforms
+- **Backup and Recovery**: Ensuring business continuity
+- **Data Classification**: Identifying and protecting sensitive information
+
+## Best Practices for Organizations
+
+### Policy Development
+- **Remote Work Security Policy**: Clear guidelines for remote workers
+- **Acceptable Use Policy**: Defining appropriate technology use
+- **Incident Response Plan**: Procedures for security incidents
+- **Business Continuity Planning**: Maintaining operations during disruptions
+
+### Employee Training
+- **Security Awareness**: Regular training on threat recognition
+- **Phishing Simulation**: Testing and improving employee responses
+- **Secure Communication**: Best practices for video conferencing and messaging
+- **Password Management**: Strong password policies and password managers
+
+### Technology Implementation
+- **Cloud-First Security**: Leveraging cloud-native security solutions
+- **Automation**: Automated threat detection and response
+- **Integration**: Unified security platforms and single pane of glass management
+- **Monitoring**: 24/7 security operations center (SOC) capabilities
+
+## Emerging Technologies and Solutions
+
+### Artificial Intelligence and Machine Learning
+- **Behavioral Analytics**: Detecting anomalous user behavior
+- **Threat Intelligence**: AI-powered threat detection and prediction
+- **Automated Response**: Self-healing security systems
+- **Risk Scoring**: Dynamic risk assessment based on multiple factors
+
+### Zero Trust Architecture
+- **Never Trust, Always Verify**: Continuous verification of users and devices
+- **Least Privilege Access**: Minimal necessary access rights
+- **Microsegmentation**: Granular network access controls
+- **Continuous Monitoring**: Real-time security posture assessment
+
+## Compliance and Regulatory Considerations
+
+### Data Privacy Regulations
+- **GDPR**: European data protection requirements
+- **CCPA**: California consumer privacy act compliance
+- **HIPAA**: Healthcare information protection
+- **Industry Standards**: SOX, PCI DSS, and other regulatory frameworks
+
+### Remote Work Compliance
+- **Data Residency**: Ensuring data remains in required jurisdiction
+- **Audit Trails**: Maintaining records of access and activities
+- **Breach Notification**: Timely reporting of security incidents
+- **Third-Party Risk**: Managing vendor and supplier security
+
+## Future of Remote Work Security
+
+### Hybrid Work Models
+- **Flexible Security**: Adapting to changing work patterns
+- **Consistent Experience**: Seamless security regardless of location
+- **Context-Aware Security**: Dynamic security based on user context
+- **Secure Collaboration**: Protected communication and file sharing
+
+### Technology Evolution
+- **Quantum-Safe Cryptography**: Preparing for quantum computing threats
+- **Biometric Authentication**: Advanced identity verification methods
+- **Edge Computing**: Distributed security processing
+- ** 5G Security**: Securing next-generation mobile networks
+
+## Conclusion
+
+The remote work revolution requires a fundamental rethinking of cybersecurity strategies. Organizations must embrace new technologies, implement comprehensive policies, and foster a security-conscious culture to protect against evolving threats. Success depends on balancing security requirements with user experience while maintaining business productivity and continuity.`,
+    category: 'cybersecurity',
+    tags: ['cybersecurity', 'remote-work', 'zero-trust', 'security'],
+    status: 'draft',
+    featured: false,
+    publishDate: null,
+    readTime: 9,
+    createdAt: '2023-12-01T00:00:00.000Z',
+    updatedAt: '2023-12-01T00:00:00.000Z',
+  }
+];
+
+export async function GET(
+  request: NextRequest,
+  { params }: { params: { id: string } }
+) {
+  try {
+    const content = mockResearch.find(r => r._id === params.id);
+    
+    if (!content) {
+      return NextResponse.json(
+        { error: 'Research content not found' },
+        { status: 404 }
+      );
+    }
+
+    return NextResponse.json({ content });
+  } catch (error) {
+    console.error('Get research content error:', error);
+    return NextResponse.json(
+      { error: 'Internal server error' },
+      { status: 500 }
+    );
+  }
+}
+
+export async function PUT(
+  request: NextRequest,
+  { params }: { params: { id: string } }
+) {
+  try {
+    const data = await request.json();
+    const contentIndex = mockResearch.findIndex(r => r._id === params.id);
+    
+    if (contentIndex === -1) {
+      return NextResponse.json(
+        { error: 'Research content not found' },
+        { status: 404 }
+      );
+    }
+
+    // Update the content in mock data
+    const updatedContent = {
+      ...mockResearch[contentIndex],
+      ...data,
+      updatedAt: new Date().toISOString(),
+    };
+    
+    // In a real app, this would be saved to database
+    // For demo, we'll just return success
+    
+    return NextResponse.json({
+      message: 'Research content updated successfully',
+      content: updatedContent,
+    });
+  } catch (error) {
+    console.error('Update research content error:', error);
+    return NextResponse.json(
+      { error: 'Internal server error' },
+      { status: 500 }
+    );
+  }
+}
+
+export async function DELETE(
+  request: NextRequest,
+  { params }: { params: { id: string } }
+) {
+  try {
+    const contentIndex = mockResearch.findIndex(r => r._id === params.id);
+    
+    if (contentIndex === -1) {
+      return NextResponse.json(
+        { error: 'Research content not found' },
+        { status: 404 }
+      );
+    }
+
+    // In a real app, this would be deleted from database
+    // For demo, we'll just return success
+    
+    return NextResponse.json({
+      message: 'Research content deleted successfully',
+    });
+  } catch (error) {
+    console.error('Delete research content error:', error);
+    return NextResponse.json(
+      { error: 'Internal server error' },
+      { status: 500 }
+    );
+  }
+}

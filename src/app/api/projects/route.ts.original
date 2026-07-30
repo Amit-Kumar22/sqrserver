@@ -1,0 +1,92 @@
+import { NextRequest, NextResponse } from 'next/server';
+import dbConnect from '@/lib/mongodb';
+import Project from '@/models/Project';
+
+// GET /api/projects - Get all projects (public)
+export async function GET(request: NextRequest) {
+  try {
+    await dbConnect();
+    
+    const { searchParams } = new URL(request.url);
+    const limit = parseInt(searchParams.get('limit') || '10');
+    const page = parseInt(searchParams.get('page') || '1');
+    const category = searchParams.get('category');
+    const featured = searchParams.get('featured');
+    
+    const query: any = {};
+    if (category) query.category = category;
+    if (featured) query.featured = featured === 'true';
+    
+    const skip = (page - 1) * limit;
+    
+    const projects = await Project.find(query)
+      .sort({ createdAt: -1 })
+      .skip(skip)
+      .limit(limit)
+      .lean();
+    
+    const total = await Project.countDocuments(query);
+    
+    return NextResponse.json(
+      {
+        projects,
+        pagination: {
+          total,
+          page,
+          limit,
+          totalPages: Math.ceil(total / limit),
+        },
+      },
+      { status: 200 }
+    );
+  } catch (error) {
+    console.error('Get projects error:', error);
+    return NextResponse.json(
+      { error: 'Internal server error' },
+      { status: 500 }
+    );
+  }
+}
+
+// POST /api/projects - Create new project (admin only)
+export async function POST(request: NextRequest) {
+  try {
+    await dbConnect();
+    
+    const projectData = await request.json();
+    
+    // Validate required fields
+    const requiredFields = ['title', 'description', 'detailedDescription', 'technologies', 'category', 'startDate'];
+    for (const field of requiredFields) {
+      if (!projectData[field]) {
+        return NextResponse.json(
+          { error: `${field} is required` },
+          { status: 400 }
+        );
+      }
+    }
+    
+    const project = new Project(projectData);
+    await project.save();
+    
+    return NextResponse.json(
+      { message: 'Project created successfully', project },
+      { status: 201 }
+    );
+  } catch (error: any) {
+    console.error('Create project error:', error);
+    
+    if (error.name === 'ValidationError') {
+      const errors = Object.values(error.errors).map((err: any) => err.message);
+      return NextResponse.json(
+        { error: 'Validation error', details: errors },
+        { status: 400 }
+      );
+    }
+    
+    return NextResponse.json(
+      { error: 'Internal server error' },
+      { status: 500 }
+    );
+  }
+}

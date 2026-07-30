@@ -1,0 +1,246 @@
+import { NextRequest, NextResponse } from 'next/server';
+
+// Mock project data (same as in main route)
+const mockProjects = [
+  {
+    _id: '65a1b2c3d4e5f6789012345a',
+    title: 'E-Commerce Platform',
+    description: 'Modern e-commerce platform with advanced features and seamless user experience.',
+    detailedDescription: `A comprehensive e-commerce platform built with Next.js and Node.js, featuring real-time inventory management, secure payment processing, and advanced analytics.
+
+Key features include:
+- Multi-vendor marketplace support
+- Real-time inventory tracking
+- Advanced search and filtering
+- Secure payment gateway integration
+- Admin dashboard with analytics
+- Responsive design for all devices
+
+The platform handles high traffic loads and provides an excellent user experience across all touchpoints.`,
+    technologies: ['Next.js', 'React', 'Node.js', 'MongoDB', 'Stripe', 'Redis'],
+    category: 'web-development',
+    status: 'completed',
+    startDate: '2023-01-15',
+    endDate: '2023-06-30',
+    featured: true,
+    demoUrl: 'https://demo.example.com',
+    githubUrl: 'https://github.com/example/ecommerce',
+    createdAt: '2023-01-15T00:00:00.000Z',
+    updatedAt: '2023-06-30T00:00:00.000Z',
+  },
+  {
+    _id: '65a1b2c3d4e5f6789012345b',
+    title: 'Mobile Banking App',
+    description: 'Secure mobile banking application with biometric authentication and real-time transactions.',
+    detailedDescription: `A state-of-the-art mobile banking application that provides users with secure, convenient access to their financial services. Built with React Native for cross-platform compatibility.
+
+Security features:
+- Biometric authentication (fingerprint, face recognition)
+- End-to-end encryption
+- Multi-factor authentication
+- Fraud detection algorithms
+
+Functionalities:
+- Account balance and transaction history
+- Money transfers and bill payments
+- Investment portfolio management
+- Customer support chat
+- Push notifications for transactions`,
+    technologies: ['React Native', 'Node.js', 'PostgreSQL', 'JWT', 'Biometric API'],
+    category: 'mobile-app',
+    status: 'completed',
+    startDate: '2023-03-01',
+    endDate: '2023-09-15',
+    featured: true,
+    createdAt: '2023-03-01T00:00:00.000Z',
+    updatedAt: '2023-09-15T00:00:00.000Z',
+  },
+  {
+    _id: '65a1b2c3d4e5f6789012345c',
+    title: 'AI-Powered Analytics Dashboard',
+    description: 'Intelligent analytics dashboard with machine learning insights and predictive analytics.',
+    detailedDescription: `An advanced analytics platform that leverages artificial intelligence and machine learning to provide actionable business insights. The dashboard processes large datasets and presents them in intuitive visualizations.
+
+AI Features:
+- Predictive analytics for sales forecasting
+- Anomaly detection in data patterns
+- Natural language query processing
+- Automated report generation
+- Smart recommendations based on trends
+
+Technical Implementation:
+- Python-based ML models
+- Real-time data processing
+- Interactive visualizations
+- RESTful API architecture
+- Scalable cloud infrastructure`,
+    technologies: ['Python', 'TensorFlow', 'React', 'D3.js', 'PostgreSQL', 'Docker'],
+    category: 'ai-ml',
+    status: 'ongoing',
+    startDate: '2023-08-01',
+    featured: false,
+    createdAt: '2023-08-01T00:00:00.000Z',
+    updatedAt: '2023-12-01T00:00:00.000Z',
+  },
+  {
+    _id: '65a1b2c3d4e5f6789012345d',
+    title: 'Blockchain Supply Chain',
+    description: 'Decentralized supply chain management system using blockchain technology for transparency.',
+    detailedDescription: `A revolutionary supply chain management system built on blockchain technology to ensure transparency, traceability, and authenticity throughout the supply chain process.
+
+Blockchain Features:
+- Immutable transaction records
+- Smart contract automation
+- Multi-party consensus mechanisms
+- Cryptographic security
+- Inter-blockchain communication
+
+Supply Chain Benefits:
+- Product authenticity verification
+- Real-time tracking and monitoring
+- Automated compliance checking
+- Reduced fraud and counterfeiting
+- Enhanced stakeholder trust
+
+The system integrates with existing ERP systems and provides APIs for third-party integration.`,
+    technologies: ['Ethereum', 'Solidity', 'Web3.js', 'React', 'Node.js', 'IPFS'],
+    category: 'blockchain',
+    status: 'planned',
+    startDate: '2024-01-15',
+    featured: false,
+    createdAt: '2024-01-15T00:00:00.000Z',
+    updatedAt: '2024-01-15T00:00:00.000Z',
+  },
+  {
+    _id: '65a1b2c3d4e5f6789012345e',
+    title: 'IoT Smart Home System',
+    description: 'Comprehensive IoT solution for smart home automation and management.',
+    detailedDescription: `An integrated IoT ecosystem that enables complete home automation through intelligent device connectivity and centralized management.
+
+Features:
+- Voice-activated controls
+- Energy optimization
+- Security monitoring
+- Remote access capabilities
+- Predictive maintenance`,
+    technologies: ['Arduino', 'Raspberry Pi', 'MQTT', 'React Native', 'Firebase'],
+    category: 'iot',
+    status: 'completed',
+    startDate: '2023-05-01',
+    endDate: '2023-10-30',
+    featured: false,
+    createdAt: '2023-05-01T00:00:00.000Z',
+    updatedAt: '2023-10-30T00:00:00.000Z',
+  },
+  {
+    _id: '65a1b2c3d4e5f6789012345f',
+    title: 'Cloud Infrastructure Platform',
+    description: 'Scalable cloud infrastructure management platform with automated deployment.',
+    detailedDescription: `Enterprise-grade cloud infrastructure platform providing automated deployment, scaling, and monitoring capabilities.
+
+Key capabilities:
+- Auto-scaling infrastructure
+- Container orchestration
+- CI/CD pipeline integration
+- Real-time monitoring
+- Cost optimization`,
+    technologies: ['Kubernetes', 'Docker', 'AWS', 'Terraform', 'Prometheus'],
+    category: 'web-development',
+    status: 'ongoing',
+    startDate: '2023-11-01',
+    featured: true,
+    createdAt: '2023-11-01T00:00:00.000Z',
+    updatedAt: '2023-12-15T00:00:00.000Z',
+  },
+];
+
+export async function GET(
+  request: NextRequest,
+  { params }: { params: { id: string } }
+) {
+  try {
+    const project = mockProjects.find(p => p._id === params.id);
+    
+    if (!project) {
+      return NextResponse.json(
+        { error: 'Project not found' },
+        { status: 404 }
+      );
+    }
+
+    return NextResponse.json({ project });
+  } catch (error) {
+    console.error('Get project error:', error);
+    return NextResponse.json(
+      { error: 'Internal server error' },
+      { status: 500 }
+    );
+  }
+}
+
+export async function PUT(
+  request: NextRequest,
+  { params }: { params: { id: string } }
+) {
+  try {
+    const data = await request.json();
+    const projectIndex = mockProjects.findIndex(p => p._id === params.id);
+    
+    if (projectIndex === -1) {
+      return NextResponse.json(
+        { error: 'Project not found' },
+        { status: 404 }
+      );
+    }
+
+    // Update the project in mock data
+    const updatedProject = {
+      ...mockProjects[projectIndex],
+      ...data,
+      updatedAt: new Date().toISOString(),
+    };
+    
+    // In a real app, this would be saved to database
+    // For demo, we'll just return success
+    
+    return NextResponse.json({
+      message: 'Project updated successfully',
+      project: updatedProject,
+    });
+  } catch (error) {
+    console.error('Update project error:', error);
+    return NextResponse.json(
+      { error: 'Internal server error' },
+      { status: 500 }
+    );
+  }
+}
+
+export async function DELETE(
+  request: NextRequest,
+  { params }: { params: { id: string } }
+) {
+  try {
+    const projectIndex = mockProjects.findIndex(p => p._id === params.id);
+    
+    if (projectIndex === -1) {
+      return NextResponse.json(
+        { error: 'Project not found' },
+        { status: 404 }
+      );
+    }
+
+    // In a real app, this would be deleted from database
+    // For demo, we'll just return success
+    
+    return NextResponse.json({
+      message: 'Project deleted successfully',
+    });
+  } catch (error) {
+    console.error('Delete project error:', error);
+    return NextResponse.json(
+      { error: 'Internal server error' },
+      { status: 500 }
+    );
+  }
+}
