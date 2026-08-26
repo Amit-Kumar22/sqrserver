@@ -44,29 +44,29 @@ const stats = [
 
 const team = [
   {
-    name: 'Abhishek Kumar',
-    role: 'CEO & Founder',
+    name: 'Upendra Kumar',
+    role: 'CEO & Founder, Backend, DevOps',
     expertise: 'AI, Cloud Computing, IT Strategy',
-    experience: '10+ years',
+    experience: '4+ years',
   },
   {
-    name: 'Salony Pandey',
-    role: 'Project Manager',
+    name: 'Amit Pandey',
+    role: 'CEO & Founder, Frontend, App Developer',
     expertise: 'Agile, DevOps, Client Relations',
-    experience: '4+ years',
+    experience: '2+ years',
     
   },
   {
-    name: ' Amit Kumar',
-    role: 'Full Stack Developer',
-    expertise: 'Backend, Frontend, DevOps',
+    name: 'Mithilesh Kumar',
+    role: 'CEO & Founder',
+    expertise: 'Accounting, Management',
     experience: '3+ years',
   },
   {
-    name: 'Aachal Priya',
-    role: 'Web Developer',
-    expertise: 'Frontend, UI/UX Design Mobile Apps',
-    experience: ' 2 years',
+    name: 'Rahul Kumar',
+    role: 'CEO & Founder',
+    expertise: 'Management',
+    experience: ' 3+ years',
   },
 ];
 

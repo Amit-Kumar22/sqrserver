@@ -120,7 +120,7 @@ export default function HomePage() {
                         <div className="w-8 h-8 bg-gradient-to-br from-cyan-500 to-blue-600 rounded-lg flex items-center justify-center">
                           <span className="text-white font-bold text-sm">N</span>
                         </div>
-                        <span className="font-semibold text-gray-800">NexyraTech Dashboard</span>
+                        <span className="font-semibold text-gray-800">Square Server Dashboard</span>
                       </div>
                       <div className="flex space-x-1">
                         <div className="w-3 h-3 bg-red-400 rounded-full"></div>

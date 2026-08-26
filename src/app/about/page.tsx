@@ -26,31 +26,32 @@ const values = [
 
 const team = [
   {
-    name: 'Abhishek Kumar',
-    role: 'CEO & Founder',
+    name: 'Upendra Kumar',
+    role: 'CEO & Founder, Backend, DevOps',
     expertise: 'AI, Cloud Computing, IT Strategy',
-    experience: '10+ years',
-  },
-  {
-    name: 'Salony Pandey',
-    role: 'Project Manager',
-    expertise: 'Agile, DevOps, Client Relations',
     experience: '4+ years',
-
   },
   {
-    name: ' Amit Kumar',
-    role: 'Full Stack Developer',
-    expertise: 'Backend, Frontend, DevOps',
+    name: 'Amit Pandey',
+    role: 'CEO & Founder, Frontend, App Developer',
+    expertise: 'Agile, DevOps, Client Relations',
+    experience: '2+ years',
+    
+  },
+  {
+    name: 'Mithilesh Kumar',
+    role: 'CEO & Founder',
+    expertise: 'Accounting, Management',
     experience: '3+ years',
   },
   {
-    name: 'Aachal Priya',
-    role: 'Web Developer',
-    expertise: 'Frontend, UI/UX Design Mobile Apps',
-    experience: ' 2 years',
+    name: 'Rahul Kumar',
+    role: 'CEO & Founder',
+    expertise: 'Management',
+    experience: ' 3+ years',
   },
 ];
+
 
 const stats = [
   { label: 'Projects Delivered', value: '18+' },
@@ -488,7 +489,7 @@ export default function AboutPage() {
                 <div className="absolute inset-0 flex items-center justify-center">
                   <div className="text-center text-white">
                     <RocketLaunchIcon className="w-6 h-6 mx-auto mb-1 opacity-90 group-hover:scale-110 transition-transform duration-200" />
-                    <h3 className="font-bold text-xs">Hiprotech</h3>
+                    <h3 className="font-bold text-xs">Square Server</h3>
                   </div>
                 </div>
                 <div className="absolute inset-0 bg-emerald-600/0 group-hover:bg-emerald-600/10 transition-all duration-200"></div>
