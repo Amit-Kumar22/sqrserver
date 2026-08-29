@@ -2,12 +2,12 @@
 
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { Home as HomeIcon, Folder as FolderIcon, FlaskConical as BeakerIcon, LogOut as ArrowRightOnRectangleIcon, BarChart3 as ChartBarIcon, Plus as PlusIcon, Eye as EyeIcon, FileText as DocumentTextIcon, Users as UserGroupIcon } from 'lucide-react';
+import { Home as HomeIcon, Folder as FolderIcon, FlaskConical as BeakerIcon, LogOut as ArrowRightOnRectangleIcon, BarChart3 as ChartBarIcon, Plus as PlusIcon, Globe as GlobeIcon, FileText as DocumentTextIcon, Users as UserGroupIcon, MessageSquare as MessageSquareIcon, Inbox as InboxIcon } from 'lucide-react';
 import { useAuth } from '@/contexts/AuthContext';
 
 const navigation = [
   {
-    name: 'Dashboard',  
+    name: 'Dashboard',
     href: '/admin/dashboard',
     icon: HomeIcon,
   },
@@ -20,6 +20,16 @@ const navigation = [
     name: 'Research',
     href: '/admin/research',
     icon: BeakerIcon,
+  },
+  {
+    name: 'Chatbot',
+    href: '/admin/chatbot',
+    icon: MessageSquareIcon,
+  },
+  {
+    name: 'Chat Leads',
+    href: '/admin/chatbot/leads',
+    icon: InboxIcon,
   },
   {
     name: 'Admin Management',
@@ -38,19 +48,16 @@ const quickActions = [
     name: 'Add Project',
     href: '/admin/projects/new',
     icon: PlusIcon,
-    description: 'Create new project'
   },
   {
-    name: 'Add Research Content',
+    name: 'Add Research',
     href: '/admin/research/new',
     icon: DocumentTextIcon,
-    description: 'Publish new research article'
   },
   {
     name: 'View Website',
     href: '/',
-    icon: EyeIcon,
-    description: 'Visit the public website'
+    icon: GlobeIcon,
   },
 ];
 
@@ -67,107 +74,115 @@ export default function AdminSidebar({ sidebarOpen, setSidebarOpen }: AdminSideb
     <>
       {/* Mobile sidebar overlay */}
       {sidebarOpen && (
-        <div className="fixed inset-0 z-10 lg:hidden">
-          <div 
-            className="fixed inset-0 bg-gray-600 bg-opacity-75"
+        <div className="fixed inset-0 z-20 lg:hidden">
+          <div
+            className="fixed inset-0 bg-slate-900/60 backdrop-blur-sm"
             onClick={() => setSidebarOpen(false)}
           />
         </div>
       )}
-      
+
       {/* Sidebar */}
-      <div className={`fixed inset-y-0 left-0 z-10 w-64 bg-white border-r border-gray-200 transform ${
+      <div className={`fixed inset-y-0 left-0 z-30 w-72 bg-slate-900 transform ${
         sidebarOpen ? 'translate-x-0' : '-translate-x-full'
-      } transition-transform duration-200 ease-in-out lg:translate-x-0 lg:static lg:inset-0`}>
+      } transition-transform duration-200 ease-in-out lg:translate-x-0 lg:static lg:inset-0 flex-shrink-0`}>
         <div className="flex flex-col h-full">
           {/* Logo */}
-          <div className="flex items-center h-16 px-6 border-b border-gray-200 bg-white">
-            <Link href="/admin/dashboard">
-              <span className="text-xl font-bold text-primary-600 cursor-pointer">
-                SquareServer<span className="text-gray-900">Tech</span>
-                <span className="block text-xs text-gray-500 font-normal">Admin Panel</span>
-              </span>
+          <div className="flex items-center h-16 px-6 border-b border-slate-800/80 flex-shrink-0">
+            <Link href="/admin/dashboard" className="flex items-center gap-3">
+              <div className="w-9 h-9 rounded-lg bg-gradient-to-br from-teal-400 to-teal-600 flex items-center justify-center text-white font-bold text-sm shadow-lg shadow-teal-900/40">
+                SS
+              </div>
+              <div className="leading-tight">
+                <span className="block text-sm font-semibold text-white tracking-wide">
+                  SquareServer
+                </span>
+                <span className="block text-[11px] text-slate-400 font-medium uppercase tracking-wider">
+                  Admin Panel
+                </span>
+              </div>
             </Link>
           </div>
-          
+
           {/* Navigation */}
-          <nav className="flex-1 px-4 py-6 space-y-6 overflow-y-auto">
+          <nav className="flex-1 px-3 py-6 space-y-8 overflow-y-auto">
             {/* Main Navigation */}
-            <div className="space-y-2">
-              {navigation.map((item) => {
-                const isActive = pathname === item.href;
-                return (
-                  <Link
-                    key={item.name}
-                    href={item.href}
-                    className={`group flex items-center px-4 py-3 text-sm font-medium rounded-lg transition-all duration-200 ${
-                      isActive
-                        ? 'bg-primary-100 text-primary-700 border-r-2 border-primary-600'
-                        : 'text-gray-700 hover:bg-gray-50 hover:text-gray-900'
-                    }`}
-                    onClick={() => setSidebarOpen(false)}
-                  >
-                    <item.icon
-                      className={`flex-shrink-0 w-5 h-5 mr-4 ${
-                        isActive ? 'text-primary-600' : 'text-gray-400 group-hover:text-gray-600'
+            <div>
+              <h3 className="px-3 mb-2 text-[11px] font-semibold text-slate-500 uppercase tracking-wider">
+                Overview
+              </h3>
+              <div className="space-y-1">
+                {navigation.map((item) => {
+                  const isActive = pathname === item.href;
+                  return (
+                    <Link
+                      key={item.name}
+                      href={item.href}
+                      className={`group relative flex items-center gap-3 px-3 py-2.5 text-sm font-medium rounded-lg transition-colors duration-150 ${
+                        isActive
+                          ? 'bg-teal-500/10 text-teal-400'
+                          : 'text-slate-300 hover:bg-slate-800/70 hover:text-white'
                       }`}
-                    />
-                    {item.name}
-                  </Link>
-                );
-              })}
+                      onClick={() => setSidebarOpen(false)}
+                    >
+                      {isActive && (
+                        <span className="absolute left-0 top-1/2 -translate-y-1/2 h-5 w-1 rounded-r-full bg-teal-400" />
+                      )}
+                      <item.icon
+                        className={`flex-shrink-0 w-[18px] h-[18px] ${
+                          isActive ? 'text-teal-400' : 'text-slate-500 group-hover:text-slate-300'
+                        }`}
+                      />
+                      {item.name}
+                    </Link>
+                  );
+                })}
+              </div>
             </div>
 
             {/* Quick Actions Section */}
-            <div className="border-t border-gray-200 pt-6">
-              <h3 className="px-2 mb-3 text-xs font-semibold text-gray-500 uppercase tracking-wider">
+            <div>
+              <h3 className="px-3 mb-2 text-[11px] font-semibold text-slate-500 uppercase tracking-wider">
                 Quick Actions
               </h3>
-              <div className="space-y-2">
+              <div className="space-y-1">
                 {quickActions.map((action) => (
                   <Link
                     key={action.name}
                     href={action.href}
-                    className="group flex items-center px-4 py-3 text-sm font-medium text-gray-700 rounded-lg hover:bg-green-50 hover:text-green-700 transition-all duration-200"
+                    className="group flex items-center gap-3 px-3 py-2.5 text-sm font-medium text-slate-300 rounded-lg hover:bg-slate-800/70 hover:text-white transition-colors duration-150"
                     onClick={() => setSidebarOpen(false)}
                     target={action.href === '/' ? '_blank' : undefined}
                   >
-                    <action.icon className="flex-shrink-0 w-5 h-5 mr-4 text-gray-400 group-hover:text-green-600" />
-                    <div className="flex-1">
-                      <div className="font-medium">{action.name}</div>
-                      <div className="text-xs text-gray-500 group-hover:text-green-600">
-                        {action.description}
-                      </div>
-                    </div>
+                    <action.icon className="flex-shrink-0 w-[18px] h-[18px] text-slate-500 group-hover:text-slate-300" />
+                    {action.name}
                   </Link>
                 ))}
               </div>
             </div>
           </nav>
-          
+
           {/* User info and logout */}
-          <div className="border-t border-gray-200 bg-gray-50 p-4">
-            <div className="flex items-center mb-4 px-2">
-              <div className="flex-shrink-0">
-                <div className="w-10 h-10 bg-primary-500 rounded-full flex items-center justify-center">
-                  <span className="text-white font-semibold text-sm">
-                    {user?.name?.charAt(0) || 'A'}
-                  </span>
-                </div>
+          <div className="border-t border-slate-800/80 p-3 flex-shrink-0">
+            <div className="flex items-center gap-3 px-2 py-2 mb-1 rounded-lg">
+              <div className="flex-shrink-0 w-9 h-9 rounded-full bg-gradient-to-br from-teal-400 to-teal-600 flex items-center justify-center">
+                <span className="text-white font-semibold text-sm">
+                  {user?.name?.charAt(0)?.toUpperCase() || 'A'}
+                </span>
               </div>
-              <div className="ml-3 flex-1 min-w-0">
-                <p className="text-sm font-semibold text-gray-900 truncate">
+              <div className="flex-1 min-w-0">
+                <p className="text-sm font-medium text-white truncate">
                   {user?.name || 'Admin User'}
                 </p>
-                <p className="text-xs text-gray-600 truncate">{user?.email}</p>
+                <p className="text-xs text-slate-400 truncate">{user?.email}</p>
               </div>
             </div>
-            
+
             <button
               onClick={logout}
-              className="flex items-center w-full px-4 py-3 text-sm font-medium text-gray-700 rounded-lg hover:bg-gray-100 hover:text-gray-900 transition-all duration-200"
+              className="flex items-center gap-3 w-full px-3 py-2.5 text-sm font-medium text-slate-300 rounded-lg hover:bg-red-500/10 hover:text-red-400 transition-colors duration-150"
             >
-              <ArrowRightOnRectangleIcon className="w-5 h-5 mr-4 text-gray-400" />
+              <ArrowRightOnRectangleIcon className="w-[18px] h-[18px]" />
               Sign out
             </button>
           </div>

@@ -150,14 +150,14 @@ async function sendCustomerConfirmation(data: ContactSubmission) {
         
         <div style="background-color: #fef3c7; padding: 20px; border-radius: 8px; margin: 20px 0;">
           <h3 style="color: #d97706; margin-top: 0;">Contact Information</h3>
-          <p><strong>📧 Email:</strong> <a href="mailto:info@squareserver.in" style="color: #22c55e;">info@squareserver.in</a></p>
-          <p><strong>📞 Phone:</strong> <a href="tel:+919876543210" style="color: #22c55e;">+91 98765 43210</a></p>
-          <p><strong>🏢 Address:</strong> The Cozy Corner, No 9A, Choudhary Lane Road, Vikash Nagar, Balapur, Patna, Bihar 800010</p>
+          <p><strong>📧 Email:</strong> <a href="mailto:squareserver55@gmail.com" style="color: #22c55e;">squareserver55@gmail.com</a></p>
+          <p><strong>📞 Phone:</strong> <a href="tel:+919296960172" style="color: #22c55e;">+91 92969 60172</a></p>
+          <p><strong>🏢 Address:</strong> Patliputra Golambar, Patna, Bihar 800010</p>
         </div>
         
         <div style="margin-top: 30px; padding-top: 20px; border-top: 1px solid #e5e7eb; text-align: center; color: #6b7280;">
           <p>This is an automated confirmation email. Please do not reply to this email.</p>
-          <p>If you have any urgent queries, please call us at <strong>+91 98765 43210</strong></p>
+          <p>If you have any urgent queries, please call us at <strong>+91 92969 60172</strong></p>
         </div>
       </div>
     </div>
@@ -200,7 +200,7 @@ export async function POST(request: NextRequest) {
     if (!process.env.EMAIL_USER || !process.env.EMAIL_PASS || process.env.EMAIL_PASS === 'your_email_password_here') {
       console.error('❌ Email configuration incomplete. Please set EMAIL_USER and EMAIL_PASS in .env file');
       return NextResponse.json(
-        { error: 'Email service temporarily unavailable. Please contact us directly at info@squareserver.in or call +91 98765 43210.' },
+        { error: 'Email service temporarily unavailable. Please contact us directly at squareserver55@gmail.com or call +91 92969 60172.' },
         { status: 503 }
       );
     }
@@ -224,7 +224,7 @@ export async function POST(request: NextRequest) {
       });
       
       // Provide specific error messages based on error type
-      let userMessage = 'Failed to send email confirmation. Please contact us directly at info@squareserver.in or call +91 98765 43210.';
+      let userMessage = 'Failed to send email confirmation. Please contact us directly at squareserver55@gmail.com or call +91 92969 60172.';
       
       if (emailError.message?.includes('createTransport is not a function')) {
         userMessage = 'Email service configuration error. Please contact us directly.';

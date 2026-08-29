@@ -135,9 +135,9 @@ export function AuthProvider({ children }: { children: ReactNode }) {
       }
       
       toast.success('Logged out successfully');
-      
-      // Force redirect to login
-      window.location.href = '/admin/login';
+
+      // Redirect to the public home page
+      window.location.href = '/';
     } catch (error) {
       console.error('Logout error:', error);
       toast.error('Logout failed');

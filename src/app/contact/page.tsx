@@ -45,19 +45,19 @@ const contactInfo = [
   {
     icon: EnvelopeIcon,
     label: 'Email',
-    value: 'info@squareserver.in',
-    link: 'mailto:info@squareserver.in',
+    value: 'squareserver55@gmail.com',
+    link: 'mailto:squareserver55@gmail.com',
   },
   {
     icon: PhoneIcon,
     label: 'Phone',
-    value: '+91 98765 43210',
-    link: 'tel:+919876543210',
+    value: '+91 92969 60172',
+    link: 'tel:+919296960172',
   },
   {
     icon: MapPinIcon,
     label: 'Address',
-    value: 'The Cozy Corner, No 9A, Choudhary Lane Road, Vikash Nagar, Balapur, Patna, Bihar 800010',
+    value: 'Patliputra Golambar, Patna, Bihar 800010',
     link: null,
   },
   {
@@ -91,7 +91,7 @@ export default function ContactPage() {
         if (response.status === 503) {
           toast.error(result.error || 'Email service temporarily unavailable. Please contact us directly.');
         } else if (response.status === 500 && result.details?.includes('Email service error')) {
-          toast.error(result.error || 'Failed to send email. Please contact us directly at info@squareserver.in or call +91 98765 43210.');
+          toast.error(result.error || 'Failed to send email. Please contact us directly at squareserver55@gmail.com or call +91 92969 60172.');
         } else {
           toast.error(result.error || 'Failed to submit contact form. Please try again.');
         }
@@ -111,7 +111,7 @@ export default function ContactPage() {
       } else if (error.name === 'SyntaxError') {
         toast.error('Server response error. Please try again later.');
       } else {
-        toast.error('Unable to send message. Please contact us directly at info@squareserver.in or call +91 98765 43210.');
+        toast.error('Unable to send message. Please contact us directly at squareserver55@gmail.com or call +91 92969 60172.');
       }
     } finally {
       setIsSubmitting(false);

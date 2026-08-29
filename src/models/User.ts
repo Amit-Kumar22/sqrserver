@@ -15,6 +15,8 @@ export interface IUser extends Document {
   otpExpiry?: Date;
   resetOtp?: string;
   resetOtpExpiry?: Date;
+  approvalToken?: string;
+  approvalTokenExpiry?: Date;
   createdAt: Date;
   updatedAt: Date;
 }
@@ -81,6 +83,14 @@ const UserSchema: Schema = new Schema(
       sparse: true,
     },
     resetOtpExpiry: {
+      type: Date,
+      sparse: true,
+    },
+    approvalToken: {
+      type: String,
+      sparse: true,
+    },
+    approvalTokenExpiry: {
       type: Date,
       sparse: true,
     },

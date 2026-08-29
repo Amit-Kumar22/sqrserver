@@ -22,9 +22,9 @@ const footerNavigation = {
     { name: 'Terms of Service', href: '/terms-of-service' },
   ],
   contact: [
-    { name: 'info@squareserver.in', href: 'mailto:info@squareserver.in', icon: EnvelopeIcon },
-    { name: '+91 98765 43210', href: 'tel:+919876543210', icon: PhoneIcon },
-    { name: 'The Cozy Corner, No 9A, Choudhary Lane Road, Vikash Nagar, Balapur, Patna, Bihar 800010', href: '#', icon: MapPinIcon },
+    { name: 'squareserver55@gmail.com', href: 'mailto:squareserver55@gmail.com', icon: EnvelopeIcon },
+    { name: '+91 92969 60172', href: 'tel:+919296960172', icon: PhoneIcon },
+    { name: 'Patliputra Golambar, Patna, Bihar 800010', href: '#', icon: MapPinIcon },
   ],
   social: [
     {

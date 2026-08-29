@@ -100,6 +100,12 @@ const team = [
     expertise: 'Management',
     experience: '3+ years',
   },
+  {
+    name: 'Jyoti Kumari',
+    role: 'HR',
+    expertise: 'HR Management',
+    experience: '1.5+ years',
+  },
 ];
 
 const stats = [

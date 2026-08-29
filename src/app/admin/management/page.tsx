@@ -3,6 +3,8 @@
 import { useState, useEffect } from 'react';
 import { toast } from 'react-hot-toast';
 import { Users as UserGroupIcon, CheckCircle2 as CheckCircleIcon, XCircle as XCircleIcon, Clock as ClockIcon, Eye as EyeIcon, User as UserIcon, Mail as EnvelopeIcon, CalendarDays as CalendarDaysIcon, ShieldCheck as ShieldCheckIcon, CheckCircle2 as CheckCircleIconSolid, XCircle as XCircleIconSolid } from 'lucide-react';
+import AdminSidebar from '@/components/admin/AdminSidebar';
+import AdminHeader from '@/components/admin/AdminHeader';
 
 interface AdminUser {
   id: string;
@@ -20,6 +22,7 @@ interface AdminUser {
 }
 
 export default function AdminManagementPage() {
+  const [sidebarOpen, setSidebarOpen] = useState(false);
   const [admins, setAdmins] = useState<AdminUser[]>([]);
   const [loading, setLoading] = useState(true);
   const [actionLoading, setActionLoading] = useState<string | null>(null);
@@ -140,20 +143,24 @@ export default function AdminManagementPage() {
 
   const statusCounts = getStatusCounts();
 
-  if (loading) {
-    return (
-      <div className="flex items-center justify-center min-h-96">
-        <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-primary-600"></div>
-      </div>
-    );
-  }
-
   return (
-    <div className="space-y-6">
+    <div className="flex h-screen bg-gray-50">
+      <AdminSidebar sidebarOpen={sidebarOpen} setSidebarOpen={setSidebarOpen} />
+
+      <div className="flex-1 flex flex-col overflow-hidden lg:ml-0">
+        <AdminHeader setSidebarOpen={setSidebarOpen} title="Admin Management" />
+
+        <main className="flex-1 overflow-y-auto p-6">
+        {loading ? (
+          <div className="flex items-center justify-center min-h-96">
+            <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-primary-600"></div>
+          </div>
+        ) : (
+        <div className="space-y-6">
       <div className="sm:flex sm:items-center sm:justify-between">
         <div>
-          <h1 className="text-2xl font-bold text-gray-900">Admin Management</h1>
-          <p className="mt-2 text-sm text-gray-700">
+          <h2 className="text-xl font-semibold text-gray-900 mb-2">Admin Accounts</h2>
+          <p className="text-sm text-gray-600">
             Manage admin account requests and permissions
           </p>
         </div>
@@ -421,6 +428,10 @@ export default function AdminManagementPage() {
           </div>
         </div>
       )}
+        </div>
+        )}
+        </main>
+      </div>
     </div>
   );
 }

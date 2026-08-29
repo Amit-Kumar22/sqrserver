@@ -76,7 +76,7 @@ const UserSchema = new mongoose.Schema(
 async function createFirstAdmin() {
   try {
     // Load environment variables
-    require('dotenv').config();
+    require('dotenv').config({ path: '.env.local' });
 
     // Check if MongoDB URI is available
     if (!process.env.MONGODB_URI) {

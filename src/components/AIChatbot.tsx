@@ -15,7 +15,7 @@ interface QuickQuestion {
   category: string;
 }
 
-const WHATSAPP_NUMBER = '+919876543210'; // Replace with your WhatsApp number
+const WHATSAPP_NUMBER = '+919296960172'; // Replace with your WhatsApp number
 
 export default function AIChatbot() {
   const [isOpen, setIsOpen] = useState(false);

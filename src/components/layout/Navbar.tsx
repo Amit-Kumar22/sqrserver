@@ -220,14 +220,14 @@ export default function Navbar() {
             <div className="flex items-center gap-2 shrink-0">
               <div className="hidden md:flex items-center gap-1">
                 <a
-                  href="mailto:info@squareserver.in"
+                  href="mailto:squareserver55@gmail.com"
                   aria-label="Email us"
                   className="p-2 rounded-full text-emerald-700/70 hover:text-emerald-800 hover:bg-white/60 transition-all duration-300"
                 >
                   <EnvelopeIcon className="h-4 w-4" />
                 </a>
                 <a
-                  href="tel:+919876543210"
+                  href="tel:+919296960172"
                   aria-label="Call us"
                   className="p-2 rounded-full text-emerald-700/70 hover:text-emerald-800 hover:bg-white/60 transition-all duration-300"
                 >
@@ -352,14 +352,14 @@ export default function Navbar() {
                 </Link>
                 <div className="flex items-center justify-center gap-5 pt-1">
                   <a
-                    href="tel:+919876543210"
+                    href="tel:+919296960172"
                     className="flex items-center gap-2 text-sm font-medium text-gray-600 hover:text-emerald-600"
                   >
                     <PhoneIcon className="h-4 w-4" />
-                    +91 98765 43210
+                    +91 92969 60172
                   </a>
                   <a
-                    href="mailto:info@squareserver.in"
+                    href="mailto:squareserver55@gmail.com"
                     className="flex items-center gap-2 text-sm font-medium text-gray-600 hover:text-emerald-600"
                   >
                     <EnvelopeIcon className="h-4 w-4" />

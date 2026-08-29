@@ -133,14 +133,14 @@ export async function sendCustomerConfirmation(data: EmailData) {
         
         <div style="background-color: #fef3c7; padding: 20px; border-radius: 8px; margin: 20px 0;">
           <h3 style="color: #d97706; margin-top: 0;">Contact Information</h3>
-          <p><strong>📧 Email:</strong> <a href="mailto:info@squareserver.in" style="color: #22c55e;">info@squareserver.in</a></p>
-          <p><strong>📞 Phone:</strong> <a href="tel:+919876543210" style="color: #22c55e;">+91 98765 43210</a></p>
-          <p><strong>🏢 Address:</strong> The Cozy Corner, No 9A, Choudhary Lane Road, Vikash Nagar, Balapur, Patna, Bihar 800010</p>
+          <p><strong>📧 Email:</strong> <a href="mailto:squareserver55@gmail.com" style="color: #22c55e;">squareserver55@gmail.com</a></p>
+          <p><strong>📞 Phone:</strong> <a href="tel:+919296960172" style="color: #22c55e;">+91 92969 60172</a></p>
+          <p><strong>🏢 Address:</strong> Patliputra Golambar, Patna, Bihar 800010</p>
         </div>
         
         <div style="margin-top: 30px; padding-top: 20px; border-top: 1px solid #e5e7eb; text-align: center; color: #6b7280;">
           <p>This is an automated confirmation email. Please do not reply to this email.</p>
-          <p>If you have any urgent queries, please call us at <strong>+91 98765 43210</strong></p>
+          <p>If you have any urgent queries, please call us at <strong>+91 92969 60172</strong></p>
         </div>
       </div>
     </div>

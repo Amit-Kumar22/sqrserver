@@ -12,8 +12,17 @@ export async function middleware(request: NextRequest) {
     return NextResponse.next();
   }
   
-  // Protect admin routes (except login page)
-  if (pathname.startsWith('/admin') && pathname !== '/admin/login') {
+  // Public admin auth pages that must be reachable without a session
+  const publicAdminPaths = [
+    '/admin/login',
+    '/admin/register',
+    '/admin/verify-email',
+    '/admin/forgot-password',
+    '/admin/reset-password',
+  ];
+
+  // Protect admin routes (except the public auth pages above)
+  if (pathname.startsWith('/admin') && !publicAdminPaths.includes(pathname)) {
     const token = request.cookies.get('token')?.value;
     
     console.log(`Token found: ${!!token}`);

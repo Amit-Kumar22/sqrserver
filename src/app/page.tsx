@@ -47,7 +47,6 @@ const team = [
     role: 'CEO & Founder, Frontend, App Developer',
     expertise: 'Agile, DevOps, Client Relations',
     experience: '2+ years',
-    
   },
   {
     name: 'Mithilesh Kumar',
@@ -59,7 +58,13 @@ const team = [
     name: 'Rahul Kumar',
     role: 'CEO & Founder',
     expertise: 'Management',
-    experience: ' 3+ years',
+    experience: '3+ years',
+  },
+  {
+    name: 'Jyoti Kumari',
+    role: 'HR',
+    expertise: 'HR Management',
+    experience: '1.5+ years',
   },
 ];
 

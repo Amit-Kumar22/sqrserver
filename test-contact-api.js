@@ -30,7 +30,7 @@ async function testContactAPI() {
     
     if (response.ok) {
       console.log('\n✅ SUCCESS: Contact form is working!');
-      console.log('📧 Check your email at info@squareserver.in for the notification');
+      console.log('📧 Check your email at squareserver55@gmail.com for the notification');
     } else {
       console.log('\n❌ ERROR: Contact form failed');
       console.log('🔍 Error Details:', result.error);
