@@ -242,6 +242,304 @@ export default function AboutPage() {
         </div>
       </section>
 
+      {/* Featured Projects Section */}
+      <section className="relative bg-white overflow-hidden">
+        {/* Background Decorations */}
+        <div className="absolute inset-0 z-0">
+          <div className="absolute top-20 left-10 w-72 h-72 bg-emerald-100/30 rounded-full blur-3xl"></div>
+          <div className="absolute bottom-20 right-10 w-96 h-96 bg-teal-100/30 rounded-full blur-3xl"></div>
+        </div>
+
+        <div className="container-custom py-6 md:py-8 relative z-10">
+          {/* Section Header */}
+          <div className="text-center mb-6">
+            <div className="inline-flex items-center px-2.5 py-1 rounded-full bg-gradient-to-r from-emerald-100 to-teal-100 border border-emerald-200 mb-2">
+              <span className="w-1 h-1 bg-emerald-500 rounded-full animate-pulse mr-1.5"></span>
+              <span className="text-xs font-semibold text-emerald-700">Portfolio</span>
+            </div>
+
+            <h2 className="text-lg sm:text-xl font-bold text-gray-900 mb-2">
+              Our Featured <span className="bg-gradient-to-r from-emerald-600 to-teal-600 bg-clip-text text-transparent">Projects</span>
+            </h2>
+
+            <p className="text-xs text-gray-600 max-w-2xl mx-auto leading-snug">
+              Explore our successful projects showcasing expertise in web development and digital solutions.
+            </p>
+          </div>
+
+          {/* Projects Grid */}
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 mb-6 max-w-5xl mx-auto">
+            {/* Project 1: Hiprotech */}
+            <a
+              href="http://178.16.137.161:3000/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group relative bg-white rounded-2xl border border-gray-100 hover:border-emerald-200 overflow-hidden transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-emerald-900/5 cursor-pointer"
+            >
+              {/* Project Image/Thumbnail */}
+              <div className="relative h-24 bg-gradient-to-br from-emerald-500 to-teal-600 overflow-hidden">
+                <div className="absolute inset-0 flex items-center justify-center">
+                  <div className="text-center text-white">
+                    <RocketLaunchIcon className="w-6 h-6 mx-auto mb-1 opacity-90 group-hover:scale-110 transition-transform duration-200" />
+                    <h3 className="font-bold text-xs">Square Server</h3>
+                  </div>
+                </div>
+                <div className="absolute inset-0 bg-emerald-600/0 group-hover:bg-emerald-600/10 transition-all duration-200"></div>
+              </div>
+
+              {/* Project Content */}
+              <div className="p-3">
+                <h3 className="text-xs font-semibold text-gray-900 mb-1 group-hover:text-emerald-600 transition-colors duration-200 line-clamp-1">
+                  Tour & Travel
+                </h3>
+
+                <p className="text-xs text-gray-600 mb-1.5 leading-tight line-clamp-2">
+                  Better website for tour&travel service
+                </p>
+
+                {/* Tags */}
+                <div className="flex flex-wrap gap-1 mb-1.5">
+                  {['AI', 'STEM'].map((tag) => (
+                    <span key={tag} className="px-1.5 py-0.5 bg-emerald-50 text-emerald-700 text-xs rounded-md border border-emerald-200">
+                      {tag}
+                    </span>
+                  ))}
+                </div>
+
+                {/* Button */}
+                <div className="flex items-center text-emerald-600 font-medium text-xs group-hover:text-emerald-700 transition-colors">
+                  <span>Visit</span>
+                  <ArrowRightIcon className="w-3 h-3 ml-1 transform group-hover:translate-x-0.5 transition-transform duration-200" />
+                </div>
+              </div>
+            </a>
+
+            {/* Project 2: Young Entrepreneur Network */}
+            <a
+              href="http://178.16.137.161:4207/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group relative bg-white rounded-2xl border border-gray-100 hover:border-emerald-200 overflow-hidden transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-emerald-900/5 cursor-pointer"
+            >
+              {/* Project Image/Thumbnail */}
+              <div className="relative h-24 bg-gradient-to-br from-purple-500 to-pink-600 overflow-hidden">
+                <div className="absolute inset-0 flex items-center justify-center">
+                  <div className="text-center text-white">
+                    <UserGroupIcon className="w-6 h-6 mx-auto mb-1 opacity-90 group-hover:scale-110 transition-transform duration-200" />
+                    <h3 className="font-bold text-xs">Resturant</h3>
+                  </div>
+                </div>
+                <div className="absolute inset-0 bg-purple-600/0 group-hover:bg-purple-600/10 transition-all duration-200"></div>
+              </div>
+
+              {/* Project Content */}
+              <div className="p-3">
+                <h3 className="text-xs font-semibold text-gray-900 mb-1 group-hover:text-purple-600 transition-colors duration-200 line-clamp-1">
+                  Resturant with Admin Panel
+                </h3>
+
+                <p className="text-xs text-gray-600 mb-1.5 leading-tight line-clamp-2">
+                  With Chef and Staff Panel
+                </p>
+
+                {/* Tags */}
+                <div className="flex flex-wrap gap-1 mb-1.5">
+                  {['Startup', 'Network'].map((tag) => (
+                    <span key={tag} className="px-1.5 py-0.5 bg-purple-50 text-purple-700 text-xs rounded-md border border-purple-200">
+                      {tag}
+                    </span>
+                  ))}
+                </div>
+
+                {/* Button */}
+                <div className="flex items-center text-purple-600 font-medium text-xs group-hover:text-purple-700 transition-colors">
+                  <span>Visit</span>
+                  <ArrowRightIcon className="w-3 h-3 ml-1 transform group-hover:translate-x-0.5 transition-transform duration-200" />
+                </div>
+              </div>
+            </a>
+
+            {/* Project 3: Khanamart */}
+            <a
+              href="https://bhurrr.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group relative bg-white rounded-2xl border border-gray-100 hover:border-emerald-200 overflow-hidden transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-emerald-900/5 cursor-pointer"
+            >
+              {/* Project Image/Thumbnail */}
+              <div className="relative h-24 bg-gradient-to-br from-green-500 to-emerald-600 overflow-hidden">
+                <div className="absolute inset-0 flex items-center justify-center">
+                  <div className="text-center text-white">
+                    <ShoppingCartIcon className="w-6 h-6 mx-auto mb-1 opacity-90 group-hover:scale-110 transition-transform duration-200" />
+                    <h3 className="font-bold text-xs">Bhurr</h3>
+                  </div>
+                </div>
+                <div className="absolute inset-0 bg-green-600/0 group-hover:bg-green-600/10 transition-all duration-200"></div>
+              </div>
+
+              {/* Project Content */}
+              <div className="p-3">
+                <h3 className="text-xs font-semibold text-gray-900 mb-1 group-hover:text-green-600 transition-colors duration-200 line-clamp-1">
+                  QR Syatem for vehicles
+                </h3>
+
+                <p className="text-xs text-gray-600 mb-1.5 leading-tight line-clamp-2">
+                  One message can save a lot
+                </p>
+
+                {/* Tags */}
+                <div className="flex flex-wrap gap-1 mb-1.5">
+                  {['QR Management', 'Retail'].map((tag) => (
+                    <span key={tag} className="px-1.5 py-0.5 bg-green-50 text-green-700 text-xs rounded-md border border-green-200">
+                      {tag}
+                    </span>
+                  ))}
+                </div>
+
+                {/* Button */}
+                <div className="flex items-center text-green-600 font-medium text-xs group-hover:text-green-700 transition-colors">
+                  <span>Visit</span>
+                  <ArrowRightIcon className="w-3 h-3 ml-1 transform group-hover:translate-x-0.5 transition-transform duration-200" />
+                </div>
+              </div>
+            </a>
+
+            {/* Project 4: DAV School */}
+            <a
+              href="http://www.davschool.org/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group relative bg-white rounded-2xl border border-gray-100 hover:border-emerald-200 overflow-hidden transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-emerald-900/5 cursor-pointer"
+            >
+              {/* Project Image/Thumbnail */}
+              <div className="relative h-24 bg-gradient-to-br from-indigo-500 to-teal-600 overflow-hidden">
+                <div className="absolute inset-0 flex items-center justify-center">
+                  <div className="text-center text-white">
+                    <AcademicCapIcon className="w-6 h-6 mx-auto mb-1 opacity-90 group-hover:scale-110 transition-transform duration-200" />
+                    <h3 className="font-bold text-xs">DAV School</h3>
+                  </div>
+                </div>
+                <div className="absolute inset-0 bg-indigo-600/0 group-hover:bg-indigo-600/10 transition-all duration-200"></div>
+              </div>
+
+              {/* Project Content */}
+              <div className="p-3">
+                <h3 className="text-xs font-semibold text-gray-900 mb-1 group-hover:text-indigo-600 transition-colors duration-200 line-clamp-1">
+                  School Website
+                </h3>
+
+                <p className="text-xs text-gray-600 mb-1.5 leading-tight line-clamp-2">
+                  Educational institution portal
+                </p>
+
+                {/* Tags */}
+                <div className="flex flex-wrap gap-1 mb-1.5">
+                  {['Education', 'Portal'].map((tag) => (
+                    <span key={tag} className="px-1.5 py-0.5 bg-indigo-50 text-indigo-700 text-xs rounded-md border border-indigo-200">
+                      {tag}
+                    </span>
+                  ))}
+                </div>
+
+                {/* Button */}
+                <div className="flex items-center text-indigo-600 font-medium text-xs group-hover:text-indigo-700 transition-colors">
+                  <span>Visit</span>
+                  <ArrowRightIcon className="w-3 h-3 ml-1 transform group-hover:translate-x-0.5 transition-transform duration-200" />
+                </div>
+              </div>
+            </a>
+
+            <a
+              href="https://rdecodeveloper.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group relative bg-white rounded-2xl border border-gray-100 hover:border-emerald-200 overflow-hidden transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-emerald-900/5 cursor-pointer"
+            >
+              {/* Project Image/Thumbnail */}
+              <div className="relative h-24 bg-gradient-to-br from-indigo-500 to-teal-600 overflow-hidden">
+                <div className="absolute inset-0 flex items-center justify-center">
+                  <div className="text-center text-white">
+                    <AcademicCapIcon className="w-6 h-6 mx-auto mb-1 opacity-90 group-hover:scale-110 transition-transform duration-200" />
+                    <h3 className="font-bold text-xs">RD Height</h3>
+                  </div>
+                </div>
+                <div className="absolute inset-0 bg-indigo-600/0 group-hover:bg-indigo-600/10 transition-all duration-200"></div>
+              </div>
+
+              {/* Project Content */}
+              <div className="p-3">
+                <h3 className="text-xs font-semibold text-gray-900 mb-1 group-hover:text-indigo-600 transition-colors duration-200 line-clamp-1">
+                  Restate Bussiness
+                </h3>
+
+                <p className="text-xs text-gray-600 mb-1.5 leading-tight line-clamp-2">
+                  Best Apartment in Patna
+                </p>
+
+                {/* Tags */}
+                <div className="flex flex-wrap gap-1 mb-1.5">
+                  {['Sell', 'Network'].map((tag) => (
+                    <span key={tag} className="px-1.5 py-0.5 bg-indigo-50 text-indigo-700 text-xs rounded-md border border-indigo-200">
+                      {tag}
+                    </span>
+                  ))}
+                </div>
+
+                {/* Button */}
+                <div className="flex items-center text-indigo-600 font-medium text-xs group-hover:text-indigo-700 transition-colors">
+                  <span>Visit</span>
+                  <ArrowRightIcon className="w-3 h-3 ml-1 transform group-hover:translate-x-0.5 transition-transform duration-200" />
+                </div>
+              </div>
+            </a>
+
+            <a
+              href="https://play.google.com/store/apps/details?id=com.hiprotech.hiproems&hl=en_IN"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group relative bg-white rounded-2xl border border-gray-100 hover:border-emerald-200 overflow-hidden transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-emerald-900/5 cursor-pointer"
+            >
+              {/* Project Image/Thumbnail */}
+              <div className="relative h-24 bg-gradient-to-br from-indigo-500 to-teal-600 overflow-hidden">
+                <div className="absolute inset-0 flex items-center justify-center">
+                  <div className="text-center text-white">
+                    <AcademicCapIcon className="w-6 h-6 mx-auto mb-1 opacity-90 group-hover:scale-110 transition-transform duration-200" />
+                    <h3 className="font-bold text-xs">HRM App</h3>
+                  </div>
+                </div>
+                <div className="absolute inset-0 bg-indigo-600/0 group-hover:bg-indigo-600/10 transition-all duration-200"></div>
+              </div>
+
+              {/* Project Content */}
+              <div className="p-3">
+                <h3 className="text-xs font-semibold text-gray-900 mb-1 group-hover:text-indigo-600 transition-colors duration-200 line-clamp-1">
+                  Attedance with full HRM Management App
+                </h3>
+
+                {/* <p className="text-xs text-gray-600 mb-1.5 leading-tight line-clamp-2">
+                  Best Apartment in Patna
+                </p> */}
+
+                {/* Tags */}
+                <div className="flex flex-wrap gap-1 mb-1.5">
+                  {['Sell', 'MAnagement'].map((tag) => (
+                    <span key={tag} className="px-1.5 py-0.5 bg-indigo-50 text-indigo-700 text-xs rounded-md border border-indigo-200">
+                      {tag}
+                    </span>
+                  ))}
+                </div>
+
+                {/* Button */}
+                <div className="flex items-center text-indigo-600 font-medium text-xs group-hover:text-indigo-700 transition-colors">
+                  <span>Visit</span>
+                  <ArrowRightIcon className="w-3 h-3 ml-1 transform group-hover:translate-x-0.5 transition-transform duration-200" />
+                </div>
+              </div>
+            </a>
+          </div>
+        </div>
+      </section>
+
       {/* Vision & Mission */}
       <section className="relative bg-white">
         <div className="container-custom py-6 md:py-8">
@@ -378,216 +676,6 @@ export default function AboutPage() {
                 Choose Plan
               </button>
             </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Featured Projects Section */}
-      <section className="relative bg-white overflow-hidden">
-        {/* Background Decorations */}
-        <div className="absolute inset-0 z-0">
-          <div className="absolute top-20 left-10 w-72 h-72 bg-emerald-100/30 rounded-full blur-3xl"></div>
-          <div className="absolute bottom-20 right-10 w-96 h-96 bg-teal-100/30 rounded-full blur-3xl"></div>
-        </div>
-
-        <div className="container-custom py-6 md:py-8 relative z-10">
-          {/* Section Header */}
-          <div className="text-center mb-6">
-            <div className="inline-flex items-center px-2.5 py-1 rounded-full bg-gradient-to-r from-emerald-100 to-teal-100 border border-emerald-200 mb-2">
-              <span className="w-1 h-1 bg-emerald-500 rounded-full animate-pulse mr-1.5"></span>
-              <span className="text-xs font-semibold text-emerald-700">Portfolio</span>
-            </div>
-
-            <h2 className="text-lg sm:text-xl font-bold text-gray-900 mb-2">
-              Our Featured <span className="bg-gradient-to-r from-emerald-600 to-teal-600 bg-clip-text text-transparent">Projects</span>
-            </h2>
-
-            <p className="text-xs text-gray-600 max-w-2xl mx-auto leading-snug">
-              Explore our successful projects showcasing expertise in web development and digital solutions.
-            </p>
-          </div>
-
-          {/* Projects Grid */}
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 mb-6 max-w-5xl mx-auto">
-            {/* Project 1: Hiprotech */}
-            <a
-              href="https://weekytrip.com/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="group relative bg-white rounded-2xl border border-gray-100 hover:border-emerald-200 overflow-hidden transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-emerald-900/5 cursor-pointer"
-            >
-              {/* Project Image/Thumbnail */}
-              <div className="relative h-24 bg-gradient-to-br from-emerald-500 to-teal-600 overflow-hidden">
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <div className="text-center text-white">
-                    <RocketLaunchIcon className="w-6 h-6 mx-auto mb-1 opacity-90 group-hover:scale-110 transition-transform duration-200" />
-                    <h3 className="font-bold text-xs">Square Server</h3>
-                  </div>
-                </div>
-                <div className="absolute inset-0 bg-emerald-600/0 group-hover:bg-emerald-600/10 transition-all duration-200"></div>
-              </div>
-
-              {/* Project Content */}
-              <div className="p-3">
-                <h3 className="text-xs font-semibold text-gray-900 mb-1 group-hover:text-emerald-600 transition-colors duration-200 line-clamp-1">
-                  Tour & Travel
-                </h3>
-
-                <p className="text-xs text-gray-600 mb-1.5 leading-tight line-clamp-2">
-                  Better website for tour&travel service
-                </p>
-
-                {/* Tags */}
-                <div className="flex flex-wrap gap-1 mb-1.5">
-                  {['AI', 'STEM'].map((tag) => (
-                    <span key={tag} className="px-1.5 py-0.5 bg-emerald-50 text-emerald-700 text-xs rounded-md border border-emerald-200">
-                      {tag}
-                    </span>
-                  ))}
-                </div>
-
-                {/* Button */}
-                <div className="flex items-center text-emerald-600 font-medium text-xs group-hover:text-emerald-700 transition-colors">
-                  <span>Visit</span>
-                  <ArrowRightIcon className="w-3 h-3 ml-1 transform group-hover:translate-x-0.5 transition-transform duration-200" />
-                </div>
-              </div>
-            </a>
-
-            {/* Project 2: Young Entrepreneur Network */}
-            <a
-              href="https://yenuniversal.org/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="group relative bg-white rounded-2xl border border-gray-100 hover:border-emerald-200 overflow-hidden transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-emerald-900/5 cursor-pointer"
-            >
-              {/* Project Image/Thumbnail */}
-              <div className="relative h-24 bg-gradient-to-br from-purple-500 to-pink-600 overflow-hidden">
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <div className="text-center text-white">
-                    <UserGroupIcon className="w-6 h-6 mx-auto mb-1 opacity-90 group-hover:scale-110 transition-transform duration-200" />
-                    <h3 className="font-bold text-xs">YEN</h3>
-                  </div>
-                </div>
-                <div className="absolute inset-0 bg-purple-600/0 group-hover:bg-purple-600/10 transition-all duration-200"></div>
-              </div>
-
-              {/* Project Content */}
-              <div className="p-3">
-                <h3 className="text-xs font-semibold text-gray-900 mb-1 group-hover:text-purple-600 transition-colors duration-200 line-clamp-1">
-                  Entrepreneur Network
-                </h3>
-
-                <p className="text-xs text-gray-600 mb-1.5 leading-tight line-clamp-2">
-                  Global platform for startups
-                </p>
-
-                {/* Tags */}
-                <div className="flex flex-wrap gap-1 mb-1.5">
-                  {['Startup', 'Network'].map((tag) => (
-                    <span key={tag} className="px-1.5 py-0.5 bg-purple-50 text-purple-700 text-xs rounded-md border border-purple-200">
-                      {tag}
-                    </span>
-                  ))}
-                </div>
-
-                {/* Button */}
-                <div className="flex items-center text-purple-600 font-medium text-xs group-hover:text-purple-700 transition-colors">
-                  <span>Visit</span>
-                  <ArrowRightIcon className="w-3 h-3 ml-1 transform group-hover:translate-x-0.5 transition-transform duration-200" />
-                </div>
-              </div>
-            </a>
-
-            {/* Project 3: Khanamart */}
-            <a
-              href="https://khanamart.in/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="group relative bg-white rounded-2xl border border-gray-100 hover:border-emerald-200 overflow-hidden transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-emerald-900/5 cursor-pointer"
-            >
-              {/* Project Image/Thumbnail */}
-              <div className="relative h-24 bg-gradient-to-br from-green-500 to-emerald-600 overflow-hidden">
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <div className="text-center text-white">
-                    <ShoppingCartIcon className="w-6 h-6 mx-auto mb-1 opacity-90 group-hover:scale-110 transition-transform duration-200" />
-                    <h3 className="font-bold text-xs">Khanamart</h3>
-                  </div>
-                </div>
-                <div className="absolute inset-0 bg-green-600/0 group-hover:bg-green-600/10 transition-all duration-200"></div>
-              </div>
-
-              {/* Project Content */}
-              <div className="p-3">
-                <h3 className="text-xs font-semibold text-gray-900 mb-1 group-hover:text-green-600 transition-colors duration-200 line-clamp-1">
-                  E-Commerce Platform
-                </h3>
-
-                <p className="text-xs text-gray-600 mb-1.5 leading-tight line-clamp-2">
-                  Online shopping marketplace
-                </p>
-
-                {/* Tags */}
-                <div className="flex flex-wrap gap-1 mb-1.5">
-                  {['E-Commerce', 'Retail'].map((tag) => (
-                    <span key={tag} className="px-1.5 py-0.5 bg-green-50 text-green-700 text-xs rounded-md border border-green-200">
-                      {tag}
-                    </span>
-                  ))}
-                </div>
-
-                {/* Button */}
-                <div className="flex items-center text-green-600 font-medium text-xs group-hover:text-green-700 transition-colors">
-                  <span>Visit</span>
-                  <ArrowRightIcon className="w-3 h-3 ml-1 transform group-hover:translate-x-0.5 transition-transform duration-200" />
-                </div>
-              </div>
-            </a>
-
-            {/* Project 4: DAV School */}
-            <a
-              href="http://www.davschool.org/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="group relative bg-white rounded-2xl border border-gray-100 hover:border-emerald-200 overflow-hidden transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-emerald-900/5 cursor-pointer"
-            >
-              {/* Project Image/Thumbnail */}
-              <div className="relative h-24 bg-gradient-to-br from-indigo-500 to-teal-600 overflow-hidden">
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <div className="text-center text-white">
-                    <AcademicCapIcon className="w-6 h-6 mx-auto mb-1 opacity-90 group-hover:scale-110 transition-transform duration-200" />
-                    <h3 className="font-bold text-xs">DAV School</h3>
-                  </div>
-                </div>
-                <div className="absolute inset-0 bg-indigo-600/0 group-hover:bg-indigo-600/10 transition-all duration-200"></div>
-              </div>
-
-              {/* Project Content */}
-              <div className="p-3">
-                <h3 className="text-xs font-semibold text-gray-900 mb-1 group-hover:text-indigo-600 transition-colors duration-200 line-clamp-1">
-                  School Website
-                </h3>
-
-                <p className="text-xs text-gray-600 mb-1.5 leading-tight line-clamp-2">
-                  Educational institution portal
-                </p>
-
-                {/* Tags */}
-                <div className="flex flex-wrap gap-1 mb-1.5">
-                  {['Education', 'Portal'].map((tag) => (
-                    <span key={tag} className="px-1.5 py-0.5 bg-indigo-50 text-indigo-700 text-xs rounded-md border border-indigo-200">
-                      {tag}
-                    </span>
-                  ))}
-                </div>
-
-                {/* Button */}
-                <div className="flex items-center text-indigo-600 font-medium text-xs group-hover:text-indigo-700 transition-colors">
-                  <span>Visit</span>
-                  <ArrowRightIcon className="w-3 h-3 ml-1 transform group-hover:translate-x-0.5 transition-transform duration-200" />
-                </div>
-              </div>
-            </a>
           </div>
         </div>
       </section>
