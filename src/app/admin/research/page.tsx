@@ -6,14 +6,7 @@ import AdminSidebar from '@/components/admin/AdminSidebar';
 import AdminHeader from '@/components/admin/AdminHeader';
 import Link from 'next/link';
 import { toast } from 'react-hot-toast';
-import {
-  PlusIcon,
-  PencilIcon,
-  TrashIcon,
-  EyeIcon,
-  CalendarIcon,
-  UserIcon,
-} from '@heroicons/react/24/outline';
+import { Plus as PlusIcon, Pencil as PencilIcon, Trash2 as TrashIcon, Eye as EyeIcon, Calendar as CalendarIcon, User as UserIcon } from 'lucide-react';
 
 interface ResearchContent {
   _id: string;

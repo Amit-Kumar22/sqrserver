@@ -2,17 +2,7 @@
 
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { 
-  HomeIcon,
-  FolderIcon,
-  BeakerIcon,
-  ArrowRightOnRectangleIcon,
-  ChartBarIcon,
-  PlusIcon,
-  EyeIcon,
-  DocumentTextIcon,
-  UserGroupIcon,
-} from '@heroicons/react/24/outline';
+import { Home as HomeIcon, Folder as FolderIcon, FlaskConical as BeakerIcon, LogOut as ArrowRightOnRectangleIcon, BarChart3 as ChartBarIcon, Plus as PlusIcon, Eye as EyeIcon, FileText as DocumentTextIcon, Users as UserGroupIcon } from 'lucide-react';
 import { useAuth } from '@/contexts/AuthContext';
 
 const navigation = [

@@ -1,13 +1,7 @@
 'use client';
 
 import { useState, useEffect, useRef } from 'react';
-import { 
-  ChatBubbleLeftRightIcon, 
-  XMarkIcon, 
-  PaperAirplaneIcon,
-  SparklesIcon,
-  UserIcon
-} from '@heroicons/react/24/outline';
+import { MessagesSquare as ChatBubbleLeftRightIcon, X as XMarkIcon, Send as PaperAirplaneIcon, Sparkles as SparklesIcon, User as UserIcon } from 'lucide-react';
 
 interface Message {
   sender: 'user' | 'bot';

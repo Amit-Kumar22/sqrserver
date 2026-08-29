@@ -86,6 +86,7 @@ module.exports = {
         'scale-in': 'scaleIn 0.6s ease-out forwards',
         'text-reveal': 'textReveal 1s ease-out forwards',
         'bounce-in': 'bounceIn 0.8s ease-out forwards',
+        'float-card': 'floatCard 4s ease-in-out infinite',
       },
       keyframes: {
         float: {
@@ -188,7 +189,11 @@ module.exports = {
           '50%': { transform: 'scale(1.05)' },
           '70%': { transform: 'scale(0.9)' },
           '100%': { transform: 'scale(1)', opacity: '1' },
-        }
+        },
+        floatCard: {
+          '0%, 100%': { transform: 'translateY(0px)' },
+          '50%': { transform: 'translateY(-8px)' },
+        },
       }
     },
   },

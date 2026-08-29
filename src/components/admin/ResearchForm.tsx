@@ -3,7 +3,7 @@
 import { useState } from 'react';
 import { useForm, useFieldArray } from 'react-hook-form';
 import { toast } from 'react-hot-toast';
-import { PlusIcon, XMarkIcon } from '@heroicons/react/24/outline';
+import { Plus as PlusIcon, X as XMarkIcon } from 'lucide-react';
 
 interface ResearchFormData {
   title: string;

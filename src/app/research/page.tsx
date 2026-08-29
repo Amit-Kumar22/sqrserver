@@ -1,7 +1,7 @@
 'use client';
 
 import { useState, useEffect, useRef, useCallback } from 'react';
-import { CalendarIcon, UserIcon, TagIcon, ChevronDownIcon } from '@heroicons/react/24/outline';
+import { Calendar as CalendarIcon, User as UserIcon, Tag as TagIcon, ChevronDown as ChevronDownIcon } from 'lucide-react';
 import { toast } from 'react-hot-toast';
 import PageHeader from '@/components/layout/PageHeader';
 
@@ -173,11 +173,11 @@ export default function ResearchPage() {
             {researchAreas.map((area, index) => (
               <div
                 key={index}
-                className="group relative rounded-2xl bg-white border border-gray-100 hover:border-transparent p-5 md:p-6 transition-all duration-300 hover:shadow-xl hover:shadow-emerald-900/5 overflow-hidden"
+                className="group relative rounded-2xl bg-white border border-gray-100 hover:border-emerald-200 hover:-translate-y-1 p-5 md:p-6 transition-all duration-300 hover:shadow-xl hover:shadow-emerald-900/5 overflow-hidden"
               >
                 <div className="absolute left-0 top-0 bottom-0 w-1 bg-gradient-to-b from-emerald-400 to-teal-600 scale-y-0 group-hover:scale-y-100 origin-top transition-transform duration-300" />
                 <div className="flex items-center gap-3 mb-3">
-                  <span className="flex items-center justify-center w-8 h-8 rounded-full bg-emerald-50 text-emerald-600 text-xs font-bold group-hover:bg-gradient-to-br group-hover:from-emerald-500 group-hover:to-teal-600 group-hover:text-white transition-all duration-300">
+                  <span className="flex items-center justify-center w-8 h-8 rounded-xl bg-emerald-50 text-emerald-600 text-xs font-bold ring-1 ring-emerald-100 group-hover:ring-2 group-hover:ring-emerald-400 group-hover:bg-emerald-100 transition-all duration-300">
                     {String(index + 1).padStart(2, '0')}
                   </span>
                   <h3 className="text-base font-bold text-gray-900 group-hover:text-emerald-600 transition-colors">{area.title}</h3>

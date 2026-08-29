@@ -2,124 +2,98 @@
 
 import Link from 'next/link';
 import Image from 'next/image';
-import { 
-  CodeBracketIcon, 
-  GlobeAltIcon,
-  ClipboardDocumentListIcon,
-  ChartBarIcon,
-  PaintBrushIcon,
-  MagnifyingGlassIcon,
-  RocketLaunchIcon,
-  CubeTransparentIcon,
-  SparklesIcon,
-  ArrowRightIcon,
-  ShieldCheckIcon,
-  ChatBubbleLeftRightIcon,
-  ClockIcon,
-  HeartIcon,
-  BuildingOfficeIcon,
-  ShoppingCartIcon,
-  AcademicCapIcon,
-  BanknotesIcon,
-  TruckIcon,
-  CheckBadgeIcon,
-  UserGroupIcon
-} from '@heroicons/react/24/outline';
-import { StarIcon } from '@heroicons/react/24/solid';
+import { Code2 as CodeBracketIcon, Globe as GlobeAltIcon, ClipboardList as ClipboardDocumentListIcon, BarChart3 as ChartBarIcon, Paintbrush as PaintBrushIcon, Search as MagnifyingGlassIcon, Rocket as RocketLaunchIcon, Box as CubeTransparentIcon, Sparkles as SparklesIcon, ArrowRight as ArrowRightIcon, ShieldCheck as ShieldCheckIcon, MessagesSquare as ChatBubbleLeftRightIcon, Clock as ClockIcon, Heart as HeartIcon, Building2 as BuildingOfficeIcon, ShoppingCart as ShoppingCartIcon, GraduationCap as AcademicCapIcon, Banknote as BanknotesIcon, Truck as TruckIcon, BadgeCheck as CheckBadgeIcon, Users as UserGroupIcon, Star as StarIcon } from 'lucide-react';
 
 export default function WorkPage() {
 
   return (
     <div className="bg-white min-h-screen">
       {/* Hero Section - Two Column Layout */}
-      <section className="relative bg-gradient-to-br from-slate-900 via-green-900 to-emerald-900 overflow-hidden py-12 md:py-16">
-        {/* Animated Background Elements */}
-        <div className="absolute inset-0 overflow-hidden">
-          <div className="absolute top-20 left-10 w-64 h-64 bg-green-500/10 rounded-full blur-3xl animate-pulse"></div>
-          <div className="absolute bottom-20 right-10 w-80 h-80 bg-emerald-500/10 rounded-full blur-3xl animate-pulse delay-1000"></div>
-          <div className="absolute inset-0 opacity-10">
-            <div className="absolute inset-0" style={{
-              backgroundImage: 'radial-gradient(circle at 1px 1px, rgba(255, 255, 255, 0.15) 1px, transparent 0)',
-              backgroundSize: '50px 50px'
-            }}></div>
-          </div>
-        </div>
-        
+      <section className="relative bg-white overflow-hidden py-12 md:py-16">
+        {/* Dot-grid background, faded toward the edges */}
+        <div
+          className="absolute inset-0"
+          style={{
+            backgroundImage: 'radial-gradient(circle, #d1d5db 1px, transparent 1px)',
+            backgroundSize: '24px 24px',
+            maskImage: 'radial-gradient(ellipse 75% 65% at 50% 0%, black 40%, transparent 100%)',
+            WebkitMaskImage: 'radial-gradient(ellipse 75% 65% at 50% 0%, black 40%, transparent 100%)',
+          }}
+        />
+        <div className="pointer-events-none absolute -top-24 -right-16 w-96 h-96 bg-emerald-200/40 rounded-full blur-[110px]" />
+        <div className="pointer-events-none absolute bottom-0 -left-10 w-72 h-72 bg-teal-200/30 rounded-full blur-[100px]" />
+
         <div className="container mx-auto px-4 relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
             {/* Left Content */}
             <div className="space-y-4">
               {/* Badge */}
-              <div className="inline-flex items-center px-3 py-1.5 bg-green-500/20 backdrop-blur-sm border border-green-400/30 rounded-full text-green-300 text-xs font-medium">
-                <SparklesIcon className="w-4 h-4 mr-2" />
+              <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-emerald-50 border border-emerald-200 text-emerald-700 text-xs font-semibold">
+                <span className="w-1.5 h-1.5 bg-emerald-500 rounded-full animate-pulse" />
                 Portfolio Showcase
               </div>
-              
+
               {/* Main Heading */}
-              <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white leading-tight">
-                Our Work <span className="bg-gradient-to-r from-green-400 to-emerald-400 bg-clip-text text-transparent">Portfolio</span>
+              <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 leading-tight">
+                Our Work <span className="bg-gradient-to-r from-emerald-600 to-teal-600 bg-clip-text text-transparent">Portfolio</span>
               </h1>
-              
+
               {/* Description */}
-              <p className="text-base text-green-100 leading-relaxed">
+              <p className="text-base text-gray-600 leading-relaxed">
                 Discover innovative digital solutions that transform businesses and create lasting impact through cutting-edge technology and creative excellence.
               </p>
 
               {/* Statistics */}
-              <div className="flex flex-wrap gap-6 pt-4">
-                <div className="group">
-                  <div className="text-3xl font-bold bg-gradient-to-r from-green-400 to-emerald-400 bg-clip-text text-transparent mb-1 group-hover:scale-110 transition-transform duration-300">4+</div>
-                  <div className="text-green-200 font-medium text-sm">Projects</div>
+              <div className="flex flex-wrap gap-6 pt-4 border-t border-gray-100 mt-2">
+                <div>
+                  <div className="text-2xl font-bold text-gray-900">4+</div>
+                  <div className="text-gray-500 font-medium text-sm">Projects</div>
                 </div>
-                <div className="group">
-                  <div className="text-3xl font-bold bg-gradient-to-r from-green-400 to-emerald-400 bg-clip-text text-transparent mb-1 group-hover:scale-110 transition-transform duration-300">100%</div>
-                  <div className="text-green-200 font-medium text-sm">Success</div>
+                <div>
+                  <div className="text-2xl font-bold text-gray-900">100%</div>
+                  <div className="text-gray-500 font-medium text-sm">Success</div>
                 </div>
-                <div className="group">
-                  <div className="text-3xl font-bold bg-gradient-to-r from-green-400 to-emerald-400 bg-clip-text text-transparent mb-1 group-hover:scale-110 transition-transform duration-300">3+</div>
-                  <div className="text-green-200 font-medium text-sm">Years</div>
+                <div>
+                  <div className="text-2xl font-bold text-gray-900">3+</div>
+                  <div className="text-gray-500 font-medium text-sm">Years</div>
                 </div>
               </div>
 
               {/* CTA Buttons */}
-              <div className="flex flex-wrap gap-4 pt-4">
+              <div className="flex flex-wrap gap-3 pt-4">
                 <Link
                   href="#projects"
-                  className="group inline-flex items-center justify-center px-6 py-3 text-sm font-semibold text-slate-900 bg-gradient-to-r from-green-400 to-emerald-400 rounded-lg hover:from-green-300 hover:to-emerald-300 transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105"
+                  className="group inline-flex items-center gap-2 px-5 py-2.5 text-sm font-semibold text-white bg-gradient-to-r from-emerald-500 to-teal-600 rounded-full hover:shadow-lg hover:shadow-emerald-500/30 transform hover:-translate-y-0.5 transition-all duration-300"
                 >
                   View Projects
-                  <ArrowRightIcon className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" />
+                  <ArrowRightIcon className="h-4 w-4 group-hover:translate-x-1 transition-transform duration-300" />
                 </Link>
                 <Link
                   href="/contact"
-                  className="group inline-flex items-center justify-center px-6 py-3 text-sm font-semibold text-white border-2 border-white/30 backdrop-blur-sm rounded-lg hover:bg-white/10 transition-all duration-300"
+                  className="inline-flex items-center gap-2 px-5 py-2.5 text-sm font-semibold text-gray-700 border border-gray-200 rounded-full hover:border-emerald-300 hover:text-emerald-700 hover:bg-emerald-50/60 transition-all duration-300"
                 >
                   Start Project
-                  <RocketLaunchIcon className="ml-2 w-4 h-4 group-hover:translate-y-[-2px] transition-transform duration-300" />
+                  <RocketLaunchIcon className="h-4 w-4" />
                 </Link>
               </div>
             </div>
 
             {/* Right Image */}
             <div className="relative lg:h-[400px] h-[300px] group">
-              {/* Glow Effect */}
-              <div className="absolute inset-0 bg-gradient-to-r from-green-500 to-emerald-500 rounded-2xl blur-2xl opacity-20 group-hover:opacity-30 transition-opacity duration-500"></div>
-              
-              <div className="relative h-full rounded-2xl overflow-hidden shadow-2xl border border-white/10 group-hover:shadow-green-500/20 transition-all duration-500">
-                <Image 
-                  src="/work.jpg" 
-                  alt="UX/UI Design Portfolio" 
+              <div className="relative h-full rounded-2xl overflow-hidden shadow-xl border border-gray-100 transition-all duration-500">
+                <Image
+                  src="/work.jpg"
+                  alt="UX/UI Design Portfolio"
                   width={600}
                   height={400}
                   className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-slate-900/50 to-transparent"></div>
               </div>
-              
+
               {/* Floating Badge */}
               <div className="absolute -bottom-4 left-1/2 transform -translate-x-1/2 bg-white rounded-full px-5 py-2 shadow-lg border border-gray-100">
                 <div className="flex items-center gap-2">
-                  <CheckBadgeIcon className="w-5 h-5 text-green-500" />
+                  <CheckBadgeIcon className="w-5 h-5 text-emerald-500" />
                   <span className="text-xs font-bold text-gray-900">Quality Guaranteed</span>
                 </div>
               </div>

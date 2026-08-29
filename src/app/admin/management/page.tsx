@@ -2,21 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import { toast } from 'react-hot-toast';
-import {
-  UserGroupIcon,
-  CheckCircleIcon,
-  XCircleIcon,
-  ClockIcon,
-  EyeIcon,
-  UserIcon,
-  EnvelopeIcon,
-  CalendarDaysIcon,
-  ShieldCheckIcon,
-} from '@heroicons/react/24/outline';
-import {
-  CheckCircleIcon as CheckCircleIconSolid,
-  XCircleIcon as XCircleIconSolid,
-} from '@heroicons/react/20/solid';
+import { Users as UserGroupIcon, CheckCircle2 as CheckCircleIcon, XCircle as XCircleIcon, Clock as ClockIcon, Eye as EyeIcon, User as UserIcon, Mail as EnvelopeIcon, CalendarDays as CalendarDaysIcon, ShieldCheck as ShieldCheckIcon, CheckCircle2 as CheckCircleIconSolid, XCircle as XCircleIconSolid } from 'lucide-react';
 
 interface AdminUser {
   id: string;

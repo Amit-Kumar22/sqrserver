@@ -3,7 +3,7 @@
 import { useState, useCallback } from 'react';
 import { useForm, useFieldArray } from 'react-hook-form';
 import { toast } from 'react-hot-toast';
-import { PlusIcon, XMarkIcon, PhotoIcon, TrashIcon } from '@heroicons/react/24/outline';
+import { Plus as PlusIcon, X as XMarkIcon, Image as PhotoIcon, Trash2 as TrashIcon } from 'lucide-react';
 import Image from 'next/image';
 
 interface ProjectFormData {

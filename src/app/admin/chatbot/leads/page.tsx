@@ -3,12 +3,7 @@
 import { useState, useEffect } from 'react';
 import AdminHeader from '@/components/admin/AdminHeader';
 import AdminSidebar from '@/components/admin/AdminSidebar';
-import { 
-  ChatBubbleLeftRightIcon,
-  EnvelopeIcon,
-  PhoneIcon,
-  UserIcon
-} from '@heroicons/react/24/outline';
+import { MessagesSquare as ChatBubbleLeftRightIcon, Mail as EnvelopeIcon, Phone as PhoneIcon, User as UserIcon } from 'lucide-react';
 import toast from 'react-hot-toast';
 
 interface ChatMessage {

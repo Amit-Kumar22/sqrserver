@@ -3,12 +3,7 @@
 import { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { toast } from 'react-hot-toast';
-import { 
-  EnvelopeIcon, 
-  PhoneIcon, 
-  MapPinIcon,
-  ClockIcon
-} from '@heroicons/react/24/outline';
+import { Mail as EnvelopeIcon, Phone as PhoneIcon, MapPin as MapPinIcon, Clock as ClockIcon } from 'lucide-react';
 
 interface ContactFormData {
   name: string;

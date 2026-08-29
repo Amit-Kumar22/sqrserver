@@ -5,9 +5,10 @@ interface PageHeaderProps {
   title: ReactNode;
   description: string;
   stats?: string[];
+  cta?: ReactNode;
 }
 
-export default function PageHeader({ eyebrow, title, description, stats }: PageHeaderProps) {
+export default function PageHeader({ eyebrow, title, description, stats, cta }: PageHeaderProps) {
   return (
     <section className="relative bg-white border-b border-gray-100">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 md:py-14">
@@ -35,6 +36,8 @@ export default function PageHeader({ eyebrow, title, description, stats }: PageH
               ))}
             </div>
           )}
+
+          {cta && <div className="flex flex-wrap gap-3 mt-7">{cta}</div>}
         </div>
       </div>
     </section>

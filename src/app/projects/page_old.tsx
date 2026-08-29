@@ -2,7 +2,7 @@
 
 import { useState, useEffect, useRef, useCallback } from 'react';
 import Link from 'next/link';
-import { CalendarIcon, ArrowRightIcon, ChevronDownIcon } from '@heroicons/react/24/outline';
+import { Calendar as CalendarIcon, ArrowRight as ArrowRightIcon, ChevronDown as ChevronDownIcon } from 'lucide-react';
 import { toast } from 'react-hot-toast';
 
 interface Project {

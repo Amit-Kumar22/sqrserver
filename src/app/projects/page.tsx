@@ -4,7 +4,8 @@ import { useState, useEffect, useRef, useCallback, Suspense } from 'react';
 import { useSearchParams } from 'next/navigation';
 import Link from 'next/link';
 import Image from 'next/image';
-import { CalendarIcon, ArrowRightIcon, ChevronDownIcon, PhotoIcon, ArrowTopRightOnSquareIcon } from '@heroicons/react/24/outline';
+import { Calendar as CalendarIcon, ArrowRight as ArrowRightIcon, ChevronDown as ChevronDownIcon, Image as PhotoIcon, ExternalLink as ArrowTopRightOnSquareIcon } from 'lucide-react';
+import PageHeader from '@/components/layout/PageHeader';
 
 interface Project {
   _id: string;
@@ -169,141 +170,19 @@ function ProjectsPageContent() {
 
   return (
     <div className="bg-gradient-to-br from-emerald-50 via-teal-50 to-indigo-100 min-h-screen">
-      {/* Hero Section */}
-      <section className="relative bg-gradient-to-br from-teal-600 via-teal-700 to-purple-800 overflow-hidden shadow-xl">
-        {/* Background Elements */}
-        <div className="absolute inset-0 z-0">
-          {/* Gradient Orbs */}
-          <div className="absolute top-0 right-0 w-96 h-96 bg-purple-400/20 rounded-full blur-3xl animate-pulse"></div>
-          <div className="absolute bottom-0 left-0 w-80 h-80 bg-teal-400/15 rounded-full blur-2xl animate-pulse delay-1000"></div>
-          
-          {/* Dashboard UI Elements */}
-          <div className="absolute top-8 right-16 w-16 h-16 bg-white/10 rounded-xl backdrop-blur-sm border border-white/20 animate-float">
-            <div className="p-3">
-              <div className="w-4 h-4 bg-teal-400 rounded mb-1"></div>
-              <div className="w-8 h-1 bg-white/40 rounded"></div>
-              <div className="w-6 h-1 bg-white/30 rounded mt-1"></div>
-            </div>
-          </div>
-
-          <div className="absolute bottom-16 right-24 w-12 h-12 bg-white/10 rounded-lg backdrop-blur-sm border border-white/20 animate-float delay-500">
-            <div className="p-2">
-              <div className="w-2 h-6 bg-gradient-to-t from-emerald-400 to-teal-400 rounded-sm mx-auto"></div>
-            </div>
-          </div>
-
-          <div className="absolute top-20 left-16 w-14 h-14 bg-white/10 rounded-full backdrop-blur-sm border border-white/20 animate-float delay-700">
-            <div className="flex items-center justify-center h-full">
-              <div className="w-6 h-6 border-2 border-purple-400 rounded-full relative">
-                <div className="absolute inset-1 bg-purple-400/40 rounded-full animate-pulse"></div>
-              </div>
-            </div>
-          </div>
-
-          {/* Grid Pattern */}
-          <div className="absolute inset-0 opacity-5">
-            <div className="absolute inset-0" style={{
-              backgroundImage: 'radial-gradient(circle at 1px 1px, rgba(255, 255, 255, 0.3) 1px, transparent 0)',
-              backgroundSize: '40px 40px'
-            }}></div>
-          </div>
-        </div>
-
-        {/* Content */}
-        <div className="container-custom py-16 md:py-20 relative z-10">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
-            {/* Left - Text Content */}
-            <div>
-              <div className="inline-flex items-center px-4 py-2 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full text-white/90 text-sm font-medium mb-6">
-                <ArrowTopRightOnSquareIcon className="w-4 h-4 mr-2" />
-                IT Solutions Portfolio
-              </div>
-
-              <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white leading-tight mb-6">
-                Our Digital
-                <span className="block bg-gradient-to-r from-emerald-300 to-purple-300 bg-clip-text text-transparent">
-                  Solutions & Projects
-                </span>
-              </h1>
-
-              <p className="text-lg text-teal-100/90 leading-relaxed mb-8 max-w-xl">
-                Showcasing our portfolio of 
-                <span className="font-semibold text-emerald-300"> innovative technology solutions </span>
-                across IT Services and Research & Development initiatives.
-              </p>
-
-              {/* CTA Button */}
-              <div className="flex items-center space-x-4">
-                <button className="inline-flex items-center px-6 py-3 bg-white/10 backdrop-blur-sm border border-white/30 rounded-lg text-white font-medium hover:bg-white/20 transition-all duration-300 group">
-                  <span>View Projects</span>
-                  <ArrowRightIcon className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
-                </button>
-                <div className="flex items-center text-emerald-300 text-sm">
-                  <div className="w-2 h-2 bg-emerald-300 rounded-full animate-pulse mr-2"></div>
-                  18+ Projects Delivered
-                </div>
-              </div>
-            </div>
-
-            {/* Right - Visual Element */}
-            <div className="lg:flex justify-end hidden">
-              <div className="relative">
-                {/* Dashboard Mockup */}
-                <div className="relative bg-white/10 backdrop-blur-sm border border-white/20 rounded-2xl p-6 w-80 shadow-2xl">
-                  {/* Header */}
-                  <div className="flex items-center justify-between mb-6">
-                    <div className="flex space-x-2">
-                      <div className="w-3 h-3 bg-red-400 rounded-full"></div>
-                      <div className="w-3 h-3 bg-yellow-400 rounded-full"></div>
-                      <div className="w-3 h-3 bg-green-400 rounded-full"></div>
-                    </div>
-                    <div className="text-white/60 text-sm">Projects Dashboard</div>
-                  </div>
-                  
-                  {/* Content */}
-                  <div className="space-y-4">
-                    {/* Stats Cards */}
-                    <div className="grid grid-cols-2 gap-3">
-                      <div className="bg-gradient-to-r from-emerald-500/20 to-teal-500/20 p-3 rounded-lg">
-                        <div className="text-emerald-300 text-xs font-medium">Active</div>
-                        <div className="text-white text-lg font-bold">12</div>
-                      </div>
-                      <div className="bg-gradient-to-r from-purple-500/20 to-pink-500/20 p-3 rounded-lg">
-                        <div className="text-purple-300 text-xs font-medium">Completed</div>
-                        <div className="text-white text-lg font-bold">24</div>
-                      </div>
-                    </div>
-
-                    {/* Project List */}
-                    <div className="space-y-3">
-                      <div className="flex items-center justify-between p-3 bg-white/5 rounded-lg">
-                        <div>
-                          <div className="text-white text-sm font-medium">E-Commerce Platform</div>
-                          <div className="text-white/60 text-xs">Web Development</div>
-                        </div>
-                        <div className="w-2 h-2 bg-green-400 rounded-full"></div>
-                      </div>
-                      <div className="flex items-center justify-between p-3 bg-white/5 rounded-lg">
-                        <div>
-                          <div className="text-white text-sm font-medium">AI Analytics Tool</div>
-                          <div className="text-white/60 text-xs">Machine Learning</div>
-                        </div>
-                        <div className="w-2 h-2 bg-teal-400 rounded-full"></div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                {/* Glow Effect */}
-                <div className="absolute -inset-4 bg-gradient-to-r from-emerald-400/20 to-purple-400/20 rounded-3xl blur-xl opacity-50"></div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        {/* Bottom Fade */}
-        <div className="absolute bottom-0 left-0 right-0 h-8 bg-gradient-to-t from-emerald-50 to-transparent z-15"></div>
-      </section>
+      <PageHeader
+        eyebrow="IT Solutions Portfolio"
+        title={
+          <>
+            Our Digital{' '}
+            <span className="bg-gradient-to-r from-emerald-600 to-teal-600 bg-clip-text text-transparent">
+              Solutions & Projects
+            </span>
+          </>
+        }
+        description="Showcasing our portfolio of innovative technology solutions across IT Services and Research & Development initiatives."
+        stats={['18+ Projects Delivered']}
+      />
 
       {/* Projects Section */}
       <section className="relative">
@@ -394,7 +273,9 @@ function ProjectsPageContent() {
               <div className="grid gap-4 lg:grid-cols-2 xl:grid-cols-3">
                 {projects.map((project) => (
                   <article key={project._id} className="group relative">
-                    <div className="relative rounded-2xl bg-white border border-gray-100 group-hover:border-transparent shadow-sm group-hover:shadow-xl group-hover:shadow-emerald-900/5 group-hover:-translate-y-1 transition-all duration-300 overflow-hidden">
+                    <div className="relative rounded-2xl bg-white border border-gray-100 group-hover:border-emerald-200 shadow-sm group-hover:shadow-xl group-hover:shadow-emerald-900/5 group-hover:-translate-y-1 transition-all duration-300 overflow-hidden">
+                      {/* Accent bar */}
+                      <div className="absolute inset-x-0 top-0 h-1 z-10 bg-gradient-to-r from-emerald-400 to-teal-600 scale-x-0 group-hover:scale-x-100 origin-left transition-transform duration-300" />
                       {/* Project Image */}
                       {project.images && project.images.length > 0 ? (
                         <div className="aspect-[4/3] bg-gray-100 overflow-hidden relative">

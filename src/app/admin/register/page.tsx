@@ -3,7 +3,7 @@
 import { useState, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
 import { useForm } from 'react-hook-form';
-import { EyeIcon, EyeSlashIcon } from '@heroicons/react/24/outline';
+import { Eye as EyeIcon, EyeOff as EyeSlashIcon } from 'lucide-react';
 import { useAuth } from '@/contexts/AuthContext';
 import { toast } from 'react-hot-toast';
 import Link from 'next/link';

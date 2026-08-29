@@ -1,15 +1,5 @@
 import Link from 'next/link';
-import {
-  CodeBracketIcon,
-  DevicePhoneMobileIcon,
-  ComputerDesktopIcon,
-  CloudIcon,
-  ShieldCheckIcon,
-  CpuChipIcon,
-  BoltIcon,
-  CogIcon,
-  ArrowRightIcon,
-} from '@heroicons/react/24/outline';
+import { Code2 as CodeBracketIcon, Smartphone as DevicePhoneMobileIcon, Monitor as ComputerDesktopIcon, Cloud as CloudIcon, ShieldCheck as ShieldCheckIcon, Cpu as CpuChipIcon, Zap as BoltIcon, Settings as CogIcon, ArrowRight as ArrowRightIcon } from 'lucide-react';
 import PageHeader from '@/components/layout/PageHeader';
 
 const solutions = [
@@ -178,15 +168,15 @@ export default function SolutionsPage() {
             {solutions.map((solution) => (
               <div
                 key={solution.id}
-                className="group relative rounded-2xl bg-white border border-gray-100 hover:border-transparent p-5 md:p-6 transition-all duration-300 hover:shadow-xl hover:shadow-emerald-900/5 overflow-hidden"
+                className="group relative rounded-2xl bg-white border border-gray-100 hover:border-emerald-200 hover:-translate-y-1 p-5 md:p-6 transition-all duration-300 hover:shadow-xl hover:shadow-emerald-900/5 overflow-hidden"
               >
                 {/* Accent bar */}
                 <div className="absolute left-0 top-0 bottom-0 w-1 bg-gradient-to-b from-emerald-400 to-teal-600 scale-y-0 group-hover:scale-y-100 origin-top transition-transform duration-300" />
 
                 <div className="flex items-start gap-3.5">
                   {/* Icon */}
-                  <div className="flex-shrink-0 w-11 h-11 rounded-full bg-emerald-50 flex items-center justify-center group-hover:bg-gradient-to-br group-hover:from-emerald-500 group-hover:to-teal-600 transition-all duration-300">
-                    <solution.icon className="h-5 w-5 text-emerald-600 group-hover:text-white transition-colors duration-300" aria-hidden="true" />
+                  <div className="flex-shrink-0 w-11 h-11 rounded-xl bg-emerald-50 flex items-center justify-center ring-1 ring-emerald-100 group-hover:ring-2 group-hover:ring-emerald-400 group-hover:bg-emerald-100 transition-all duration-300">
+                    <solution.icon className="h-5 w-5 text-emerald-600 group-hover:text-emerald-700 transition-colors duration-300" aria-hidden="true" />
                   </div>
 
                   {/* Content */}

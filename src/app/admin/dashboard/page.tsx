@@ -6,14 +6,7 @@ import { useAuth } from '@/contexts/AuthContext';
 import AdminSidebar from '@/components/admin/AdminSidebar';
 import AdminHeader from '@/components/admin/AdminHeader';
 import Link from 'next/link';
-import {
-  FolderIcon,
-  BeakerIcon,
-  EyeIcon,
-  PlusIcon,
-  ClockIcon,
-  CheckCircleIcon,
-} from '@heroicons/react/24/outline';
+import { Folder as FolderIcon, FlaskConical as BeakerIcon, Eye as EyeIcon, Plus as PlusIcon, Clock as ClockIcon, CheckCircle2 as CheckCircleIcon } from 'lucide-react';
 
 interface DashboardStats {
   totalProjects: number;

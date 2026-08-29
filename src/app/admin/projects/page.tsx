@@ -7,14 +7,7 @@ import AdminHeader from '@/components/admin/AdminHeader';
 import Link from 'next/link';
 import Image from 'next/image';
 import { toast } from 'react-hot-toast';
-import {
-  PlusIcon,
-  PencilIcon,
-  TrashIcon,
-  EyeIcon,
-  CalendarIcon,
-  PhotoIcon,
-} from '@heroicons/react/24/outline';
+import { Plus as PlusIcon, Pencil as PencilIcon, Trash2 as TrashIcon, Eye as EyeIcon, Calendar as CalendarIcon, Image as PhotoIcon } from 'lucide-react';
 
 interface Project {
   _id: string;

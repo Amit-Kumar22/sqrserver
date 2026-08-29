@@ -3,14 +3,7 @@
 import { useState, useEffect } from 'react';
 import AdminHeader from '@/components/admin/AdminHeader';
 import AdminSidebar from '@/components/admin/AdminSidebar';
-import { 
-  ChatBubbleLeftRightIcon, 
-  PlusIcon, 
-  PencilIcon, 
-  TrashIcon,
-  CheckCircleIcon,
-  XCircleIcon 
-} from '@heroicons/react/24/outline';
+import { MessagesSquare as ChatBubbleLeftRightIcon, Plus as PlusIcon, Pencil as PencilIcon, Trash2 as TrashIcon, CheckCircle2 as CheckCircleIcon, XCircle as XCircleIcon } from 'lucide-react';
 import toast from 'react-hot-toast';
 
 interface FAQ {

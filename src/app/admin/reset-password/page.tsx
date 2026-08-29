@@ -5,7 +5,7 @@ import { useRouter, useSearchParams } from 'next/navigation';
 import { useForm } from 'react-hook-form';
 import { toast } from 'react-hot-toast';
 import Link from 'next/link';
-import { ArrowLeftIcon, EyeIcon, EyeSlashIcon } from '@heroicons/react/24/outline';
+import { ArrowLeft as ArrowLeftIcon, Eye as EyeIcon, EyeOff as EyeSlashIcon } from 'lucide-react';
 
 interface ResetPasswordFormData {
   otp: string;

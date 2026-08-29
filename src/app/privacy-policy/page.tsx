@@ -1,8 +1,8 @@
 'use client';
 
-import { ShieldCheckIcon, DocumentTextIcon, EyeIcon, LockClosedIcon, ArrowUpIcon } from '@heroicons/react/24/outline';
+import { ShieldCheck as ShieldCheckIcon, FileText as DocumentTextIcon, Eye as EyeIcon, Lock as LockClosedIcon, ArrowUp as ArrowUpIcon } from 'lucide-react';
 import { useState, useEffect } from 'react';
-import Image from 'next/image';
+import PageHeader from '@/components/layout/PageHeader';
 
 const privacyFeatures = [
   {
@@ -76,53 +76,11 @@ export default function PrivacyPolicyPage() {
   };
   return (
     <div className="bg-white relative">
-      {/* Hero Section */}
-      <section className="relative bg-gradient-to-br from-green-600 via-green-500 to-emerald-500 overflow-hidden h-[70vh] flex items-center">
-        {/* Hero Background Image */}
-        <div className="absolute inset-0">
-          
-          <Image
-            src="/images/privacy2.jpg"
-            alt="Privacy Policy - Professional data security and privacy protection"
-            fill
-            className="object-cover object-center"
-            priority
-            sizes="100vw"
-          />
-        </div>
-
-        {/* Simple overlay for text readability */}
-        <div className="absolute inset-0 z-20">
-          <div className="absolute inset-0 bg-black/30"></div>
-        </div>
-
-        <div className="container-custom py-12 md:py-16 relative z-30">
-          <div className="text-center max-w-4xl mx-auto">
-            {/* Clean Badge */}
-            <div className="inline-flex items-center px-6 py-3 rounded-full bg-white/15 backdrop-blur-md border border-white/25 text-white text-sm font-medium mb-6 hover:bg-white/20 transition-all duration-300 shadow-xl">
-              Last Updated: April 6, 2026
-            </div>
-
-            {/* Enhanced Main Heading */}
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white leading-tight mb-6 drop-shadow-2xl">
-              Privacy Policy
-            </h1>
-            
-            {/* Enhanced Subheading */}
-            <p className="text-xl sm:text-2xl text-teal-100 leading-relaxed max-w-3xl mx-auto mb-8 drop-shadow-lg font-medium">
-              Your data security and privacy is our priority
-            </p>
-
-            {/* Enhanced description with better styling */}
-            <div className="max-w-3xl mx-auto">
-              <p className="text-base text-teal-200/95 leading-relaxed drop-shadow-md bg-black/25 backdrop-blur-md rounded-2xl p-6 border border-white/15 shadow-2xl">
-                At SquareServer, we value your privacy and are committed to protecting your personal information. 
-                This Privacy Policy explains how we collect, use, and safeguard your data when you use our website and services.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
+      <PageHeader
+        eyebrow="Last Updated: April 6, 2026"
+        title="Privacy Policy"
+        description="Your data security and privacy is our priority. At SquareServer, we value your privacy and are committed to protecting your personal information — this policy explains how we collect, use, and safeguard your data when you use our website and services."
+      />
 
       {/* Quick Navigation */}
       <section className="sticky top-0 z-40 bg-white/80 backdrop-blur-lg border-b border-gray-200/50">

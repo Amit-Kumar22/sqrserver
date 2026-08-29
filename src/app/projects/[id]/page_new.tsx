@@ -4,7 +4,7 @@ import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { useParams } from 'next/navigation';
-import { CalendarIcon, GlobeAltIcon, CodeBracketIcon, ArrowLeftIcon } from '@heroicons/react/24/outline';
+import { Calendar as CalendarIcon, Globe as GlobeAltIcon, Code2 as CodeBracketIcon, ArrowLeft as ArrowLeftIcon } from 'lucide-react';
 import { toast } from 'react-hot-toast';
 
 interface Project {
