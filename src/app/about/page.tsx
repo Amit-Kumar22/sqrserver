@@ -75,6 +75,7 @@ const values = [
   },
 ];
 
+/* Team data hidden (commented out, not removed)
 const team = [
   {
     name: 'Upendra Kumar',
@@ -107,6 +108,7 @@ const team = [
     experience: '1.5+ years',
   },
 ];
+*/
 
 const stats = [
   { label: 'Projects Delivered', value: '18+' },
@@ -219,12 +221,14 @@ export default function AboutPage() {
                   Get in Touch
                   <ArrowRightIcon className="h-4 w-4 group-hover:translate-x-1 transition-transform duration-300" />
                 </Link>
+                {/* Meet the Team link hidden with team section
                 <a
                   href="#team"
                   className="inline-flex items-center gap-2 px-5 py-2.5 text-sm font-semibold text-gray-700 border border-gray-200 rounded-full hover:border-emerald-300 hover:text-emerald-700 hover:bg-emerald-50/60 transition-all duration-300"
                 >
                   Meet the Team
                 </a>
+                */}
               </div>
             </div>
 
@@ -747,6 +751,7 @@ export default function AboutPage() {
         </div>
       </section>
 
+      {/* Team section hidden (commented out, not removed)
       {/* Team - horizontal rows */}
       <section id="team" className="relative bg-emerald-50 scroll-mt-20">
         <div className="container-custom py-6 md:py-8">
@@ -787,6 +792,7 @@ export default function AboutPage() {
           </div>
         </div>
       </section>
+      */}
     </div>
   );
 }
