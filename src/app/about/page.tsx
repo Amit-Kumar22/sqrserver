@@ -751,8 +751,7 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Team section hidden (commented out, not removed)
-      {/* Team - horizontal rows */}
+      {/* Team - horizontal rows — hidden (commented out, not removed)
       <section id="team" className="relative bg-emerald-50 scroll-mt-20">
         <div className="container-custom py-6 md:py-8">
           <div className="text-center mb-8">

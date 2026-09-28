@@ -619,8 +619,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Team section hidden (commented out, not removed)
-      {/* Team Section */}
+      {/* Team Section — hidden (commented out, not removed)
       <section className="relative bg-white">
         <div className="container-custom py-8 md:py-10">
           <div className="text-center mb-12">
@@ -638,7 +637,7 @@ export default function HomePage() {
                 key={member.name}
                 className="group relative rounded-2xl bg-white border border-gray-100 hover:border-emerald-200 hover:-translate-y-1 p-4 text-center h-48 flex flex-col transition-all duration-300 hover:shadow-xl hover:shadow-emerald-900/5"
               >
-                {/- Avatar -/}
+                Avatar
                 <div className="relative mb-3">
                   <div className="w-12 h-12 bg-gradient-to-br from-emerald-500 to-teal-600 rounded-xl mx-auto flex items-center justify-center shadow-md">
                     <span className="text-white font-bold text-sm">
